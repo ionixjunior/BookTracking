@@ -52,7 +52,7 @@ extension BookSectionTableViewCell: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BookCollectionViewCell.identifier, for: indexPath) as? BookCollectionViewCell
-        
+        cell?.setUp(book: books[indexPath.item])
         return cell ?? UICollectionViewCell()
     }
     

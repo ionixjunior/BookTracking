@@ -11,4 +11,7 @@ class BookCollectionViewCell: UICollectionViewCell {
     
     static let identifier: String = String(describing: BookCollectionViewCell.self)
     
+    func setUp(book: Book) {
+        
+    }
 }
