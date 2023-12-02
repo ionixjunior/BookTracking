@@ -17,6 +17,7 @@ class BookSectionTableViewCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         bookSectionScreen = BookSectionScreen()
         bookSectionScreen?.configScreen(view: contentView)
+        configCollectionView()
     }
     
     required init?(coder: NSCoder) {
@@ -27,8 +28,29 @@ class BookSectionTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
+    private func configCollectionView() {
+        bookSectionScreen?.collectionView.delegate = self
+        bookSectionScreen?.collectionView.dataSource = self
+    }
+    
     func setUp(books: [Book]) {
         
     }
 
+}
+
+extension BookSectionTableViewCell: UICollectionViewDelegate {
+    
+}
+
+extension BookSectionTableViewCell: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        return UICollectionViewCell()
+    }
+    
+    
 }
