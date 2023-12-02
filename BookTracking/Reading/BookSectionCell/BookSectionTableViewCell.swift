@@ -31,6 +31,7 @@ class BookSectionTableViewCell: UITableViewCell {
     private func configCollectionView() {
         bookSectionScreen?.collectionView.delegate = self
         bookSectionScreen?.collectionView.dataSource = self
+        bookSectionScreen?.collectionView.register(BookCollectionViewCell.self, forCellWithReuseIdentifier: BookCollectionViewCell.identifier)
     }
     
     func setUp(books: [Book]) {
