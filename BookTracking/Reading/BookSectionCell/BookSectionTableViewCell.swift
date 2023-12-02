@@ -8,6 +8,9 @@
 import UIKit
 
 class BookSectionTableViewCell: UITableViewCell {
+    
+    static let identifier: String = String(describing: BookSectionTableViewCell.self)
+    static let nib: UINib = UINib(nibName: identifier, bundle: nil)
 
     override func awakeFromNib() {
         super.awakeFromNib()
