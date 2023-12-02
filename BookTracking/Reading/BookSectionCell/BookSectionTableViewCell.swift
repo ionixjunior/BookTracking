@@ -12,6 +12,7 @@ class BookSectionTableViewCell: UITableViewCell {
     static let identifier: String = String(describing: BookSectionTableViewCell.self)
     
     var bookSectionScreen: BookSectionScreen?
+    var books: [Book] = []
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -35,7 +36,7 @@ class BookSectionTableViewCell: UITableViewCell {
     }
     
     func setUp(books: [Book]) {
-        
+        self.books = books
     }
 
 }
