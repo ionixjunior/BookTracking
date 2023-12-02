@@ -39,6 +39,7 @@ class ReadingViewController: UIViewController {
     private func configTableView() {
         readingScreen?.tableView.delegate = self
         readingScreen?.tableView.dataSource = self
+        readingScreen?.tableView.register(BookSectionTableViewCell.nib, forCellReuseIdentifier: BookSectionTableViewCell.identifier)
     }
 
 }
