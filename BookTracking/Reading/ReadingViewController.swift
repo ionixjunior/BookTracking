@@ -59,6 +59,7 @@ extension ReadingViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: BookSectionTableViewCell.identifier) as? BookSectionTableViewCell
+        cell?.setUp(books: bookSections[indexPath.section].books)
         return cell ?? UITableViewCell()
     }
     
