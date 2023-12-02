@@ -18,6 +18,7 @@
 		7A64E8FF2B1BD2BF00EE1E05 /* BookSectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A64E8FE2B1BD2BF00EE1E05 /* BookSectionTableViewCell.swift */; };
 		7A64E9012B1BDFDD00EE1E05 /* BookSectionScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A64E9002B1BDFDD00EE1E05 /* BookSectionScreen.swift */; };
 		7A64E9032B1BF37F00EE1E05 /* BookCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A64E9022B1BF37F00EE1E05 /* BookCollectionViewCell.swift */; };
+		7A64E9052B1BF56800EE1E05 /* BookScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A64E9042B1BF56800EE1E05 /* BookScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		7A64E8FE2B1BD2BF00EE1E05 /* BookSectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSectionTableViewCell.swift; sourceTree = "<group>"; };
 		7A64E9002B1BDFDD00EE1E05 /* BookSectionScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSectionScreen.swift; sourceTree = "<group>"; };
 		7A64E9022B1BF37F00EE1E05 /* BookCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCollectionViewCell.swift; sourceTree = "<group>"; };
+		7A64E9042B1BF56800EE1E05 /* BookScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				7A64E8FE2B1BD2BF00EE1E05 /* BookSectionTableViewCell.swift */,
 				7A64E9002B1BDFDD00EE1E05 /* BookSectionScreen.swift */,
 				7A64E9022B1BF37F00EE1E05 /* BookCollectionViewCell.swift */,
+				7A64E9042B1BF56800EE1E05 /* BookScreen.swift */,
 			);
 			path = BookSectionCell;
 			sourceTree = "<group>";
@@ -182,6 +185,7 @@
 				7A64E9032B1BF37F00EE1E05 /* BookCollectionViewCell.swift in Sources */,
 				7A64E8F92B1BCC4E00EE1E05 /* Book.swift in Sources */,
 				7A64E8FF2B1BD2BF00EE1E05 /* BookSectionTableViewCell.swift in Sources */,
+				7A64E9052B1BF56800EE1E05 /* BookScreen.swift in Sources */,
 				7A64E8FB2B1BCCC600EE1E05 /* BookSection.swift in Sources */,
 				7A64E9012B1BDFDD00EE1E05 /* BookSectionScreen.swift in Sources */,
 				7A64E8E32B1BC2CF00EE1E05 /* SceneDelegate.swift in Sources */,
