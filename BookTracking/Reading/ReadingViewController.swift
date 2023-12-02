@@ -45,7 +45,9 @@ class ReadingViewController: UIViewController {
 }
 
 extension ReadingViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 250
+    }
 }
 
 extension ReadingViewController: UITableViewDataSource {
