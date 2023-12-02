@@ -33,10 +33,13 @@ class ReadingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configTableView()
+    }
+
+    private func configTableView() {
         readingScreen?.tableView.delegate = self
         readingScreen?.tableView.dataSource = self
     }
-
 
 }
 
