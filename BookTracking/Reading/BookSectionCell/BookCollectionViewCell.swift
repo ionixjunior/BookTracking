@@ -9,7 +9,19 @@ import UIKit
 
 class BookCollectionViewCell: UICollectionViewCell {
     
+    var bookScreen: BookScreen?
+    
     static let identifier: String = String(describing: BookCollectionViewCell.self)
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        bookScreen = BookScreen()
+        bookScreen?.configScreen(view: contentView)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     func setUp(book: Book) {
         
