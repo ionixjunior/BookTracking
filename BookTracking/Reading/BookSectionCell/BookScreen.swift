@@ -11,7 +11,7 @@ class BookScreen: UIView {
     var bookImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.contentMode = .scaleAspectFill
+        imageView.contentMode = .scaleAspectFit
         return imageView
     }()
     
@@ -36,6 +36,8 @@ class BookScreen: UIView {
         NSLayoutConstraint.activate([
             bookImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             bookImageView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            bookImageView.widthAnchor.constraint(equalTo: view.widthAnchor),
+            bookImageView.heightAnchor.constraint(equalTo: view.heightAnchor),
         ])
     }
 }
