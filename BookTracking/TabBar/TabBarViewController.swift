@@ -21,7 +21,7 @@ class TabBarViewController: UITabBarController {
         
         guard let items = tabBar.items else { return }
         
-        items[0].image = UIImage(systemName: "book")
+        items[0].image = UIImage(systemName: "book.fill")
         items[0].setImageOnly()
     }
     
