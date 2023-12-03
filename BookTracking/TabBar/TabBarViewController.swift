@@ -42,17 +42,12 @@ class TabBarViewController: UITabBarController {
         
         guard let items = tabBar.items else { return }
         
-        items[0].image = UIImage(systemName: "book.fill")
-        items[0].setImageOnly()
+        let images = ["book.fill", "books.vertical.fill", "bookmark.fill", "person.fill"]
         
-        items[1].image = UIImage(systemName: "books.vertical.fill")
-        items[1].setImageOnly()
-        
-        items[2].image = UIImage(systemName: "bookmark.fill")
-        items[2].setImageOnly()
-        
-        items[3].image = UIImage(systemName: "person.fill")
-        items[3].setImageOnly()
+        for index in images.indices {
+            items[index].image = UIImage(systemName: images[index])
+            items[index].setImageOnly()
+        }
     }
     
     
