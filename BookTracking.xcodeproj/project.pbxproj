@@ -25,6 +25,8 @@
 		7AA7E7CB2B1CBEA70058EC32 /* LibraryScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA7E7CA2B1CBEA70058EC32 /* LibraryScreen.swift */; };
 		7AA7E7CE2B1CC0460058EC32 /* BookmarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA7E7CD2B1CC0460058EC32 /* BookmarkViewController.swift */; };
 		7AA7E7D02B1CC05A0058EC32 /* BookmarkScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA7E7CF2B1CC05A0058EC32 /* BookmarkScreen.swift */; };
+		7AA7E7D32B1CC0BC0058EC32 /* ProfileScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA7E7D22B1CC0BC0058EC32 /* ProfileScreen.swift */; };
+		7AA7E7D52B1CC0C70058EC32 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA7E7D42B1CC0C70058EC32 /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +50,8 @@
 		7AA7E7CA2B1CBEA70058EC32 /* LibraryScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryScreen.swift; sourceTree = "<group>"; };
 		7AA7E7CD2B1CC0460058EC32 /* BookmarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkViewController.swift; sourceTree = "<group>"; };
 		7AA7E7CF2B1CC05A0058EC32 /* BookmarkScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkScreen.swift; sourceTree = "<group>"; };
+		7AA7E7D22B1CC0BC0058EC32 /* ProfileScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreen.swift; sourceTree = "<group>"; };
+		7AA7E7D42B1CC0C70058EC32 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +153,7 @@
 		7AA7E7C62B1CBDA90058EC32 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				7AA7E7D12B1CC0AE0058EC32 /* Profile */,
 				7AA7E7CC2B1CC0360058EC32 /* Bookmark */,
 				7AA7E7C72B1CBE650058EC32 /* Library */,
 				7A46AB042B1C204B007F7339 /* TabBar */,
@@ -173,6 +178,15 @@
 				7AA7E7CF2B1CC05A0058EC32 /* BookmarkScreen.swift */,
 			);
 			path = Bookmark;
+			sourceTree = "<group>";
+		};
+		7AA7E7D12B1CC0AE0058EC32 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				7AA7E7D22B1CC0BC0058EC32 /* ProfileScreen.swift */,
+				7AA7E7D42B1CC0C70058EC32 /* ProfileViewController.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -251,6 +265,8 @@
 				7A64E8E12B1BC2CF00EE1E05 /* AppDelegate.swift in Sources */,
 				7AA7E7CE2B1CC0460058EC32 /* BookmarkViewController.swift in Sources */,
 				7AA7E7D02B1CC05A0058EC32 /* BookmarkScreen.swift in Sources */,
+				7AA7E7D52B1CC0C70058EC32 /* ProfileViewController.swift in Sources */,
+				7AA7E7D32B1CC0BC0058EC32 /* ProfileScreen.swift in Sources */,
 				7A64E9032B1BF37F00EE1E05 /* BookCollectionViewCell.swift in Sources */,
 				7A46AB062B1C206C007F7339 /* TabBarViewController.swift in Sources */,
 				7A64E8F92B1BCC4E00EE1E05 /* Book.swift in Sources */,

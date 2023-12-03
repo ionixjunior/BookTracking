@@ -30,7 +30,7 @@ class TabBarViewController: UITabBarController {
     }()
     
     private var profile: UINavigationController = {
-        let vc = UIViewController()
+        let vc = ProfileViewController()
         vc.view.backgroundColor = .white
         let nav = UINavigationController(rootViewController: vc)
         return nav
