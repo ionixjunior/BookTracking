@@ -17,21 +17,18 @@ class TabBarViewController: UITabBarController {
     
     private var books: UINavigationController = {
         let vc = LibraryViewController()
-        vc.view.backgroundColor = .white
         let nav = UINavigationController(rootViewController: vc)
         return nav
     }()
     
     private var bookmark: UINavigationController = {
         let vc = BookmarkViewController()
-        vc.view.backgroundColor = .white
         let nav = UINavigationController(rootViewController: vc)
         return nav
     }()
     
     private var profile: UINavigationController = {
         let vc = ProfileViewController()
-        vc.view.backgroundColor = .white
         let nav = UINavigationController(rootViewController: vc)
         return nav
     }()
