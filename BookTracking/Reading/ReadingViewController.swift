@@ -48,6 +48,21 @@ extension ReadingViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 200
     }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let name = bookSections[section].name
+        if name.isEmpty {
+            return nil
+        }
+        
+        let view = BookHeaderView()
+        view.nameLabel.text = name
+        return view
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 40
+    }
 }
 
 extension ReadingViewController: UITableViewDataSource {
@@ -64,7 +79,5 @@ extension ReadingViewController: UITableViewDataSource {
         cell?.setUp(books: bookSections[indexPath.section].books)
         return cell ?? UITableViewCell()
     }
-    
-    
 }
 
