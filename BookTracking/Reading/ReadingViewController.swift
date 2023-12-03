@@ -40,6 +40,9 @@ class ReadingViewController: UIViewController {
     private func configNavBar() {
         title = "In Progress"
         navigationController?.navigationBar.prefersLargeTitles = true
+        
+        let add = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(tappedAdd))
+        navigationItem.rightBarButtonItem = add
     }
 
     private func configTableView() {
@@ -48,6 +51,9 @@ class ReadingViewController: UIViewController {
         readingScreen?.tableView.register(BookSectionTableViewCell.self, forCellReuseIdentifier: BookSectionTableViewCell.identifier)
     }
 
+    @objc func tappedAdd(_ sender: Any) {
+        print(#function)
+    }
 }
 
 extension ReadingViewController: UITableViewDelegate {
