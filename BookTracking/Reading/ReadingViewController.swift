@@ -44,6 +44,12 @@ class ReadingViewController: UIViewController {
         let add = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(tappedAdd))
         add.tintColor = UIColor(named: "Primary")
         navigationItem.rightBarButtonItem = add
+        
+        let search = UISearchController(searchResultsController: nil)
+        search.searchResultsUpdater = self
+        search.obscuresBackgroundDuringPresentation = true
+        search.searchBar.placeholder = "Search"
+        navigationItem.searchController = search
     }
 
     private func configTableView() {
@@ -96,5 +102,14 @@ extension ReadingViewController: UITableViewDataSource {
         cell?.setUp(books: bookSections[indexPath.section].books)
         return cell ?? UITableViewCell()
     }
+}
+
+extension ReadingViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let text = searchController.searchBar.text else { return }
+        print(text)
+    }
+    
+    
 }
 
