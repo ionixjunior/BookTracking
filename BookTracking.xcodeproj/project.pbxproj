@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7A46AB032B1C0DB7007F7339 /* BookHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A46AB022B1C0DB7007F7339 /* BookHeaderView.swift */; };
+		7A46AB062B1C206C007F7339 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A46AB052B1C206C007F7339 /* TabBarViewController.swift */; };
 		7A64E8E12B1BC2CF00EE1E05 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A64E8E02B1BC2CF00EE1E05 /* AppDelegate.swift */; };
 		7A64E8E32B1BC2CF00EE1E05 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A64E8E22B1BC2CF00EE1E05 /* SceneDelegate.swift */; };
 		7A64E8E52B1BC2CF00EE1E05 /* ReadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A64E8E42B1BC2CF00EE1E05 /* ReadingViewController.swift */; };
@@ -24,6 +25,7 @@
 
 /* Begin PBXFileReference section */
 		7A46AB022B1C0DB7007F7339 /* BookHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookHeaderView.swift; sourceTree = "<group>"; };
+		7A46AB052B1C206C007F7339 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		7A64E8DD2B1BC2CF00EE1E05 /* BookTracking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookTracking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A64E8E02B1BC2CF00EE1E05 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7A64E8E22B1BC2CF00EE1E05 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,6 +70,14 @@
 			path = BookHeaderView;
 			sourceTree = "<group>";
 		};
+		7A46AB042B1C204B007F7339 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				7A46AB052B1C206C007F7339 /* TabBarViewController.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
 		7A64E8D42B1BC2CF00EE1E05 = {
 			isa = PBXGroup;
 			children = (
@@ -87,6 +97,7 @@
 		7A64E8DF2B1BC2CF00EE1E05 /* BookTracking */ = {
 			isa = PBXGroup;
 			children = (
+				7A46AB042B1C204B007F7339 /* TabBar */,
 				7A64E8F72B1BCC4500EE1E05 /* Models */,
 				7A64E8F42B1BC45300EE1E05 /* Reading */,
 				7A64E8E02B1BC2CF00EE1E05 /* AppDelegate.swift */,
@@ -202,6 +213,7 @@
 				7A64E8E52B1BC2CF00EE1E05 /* ReadingViewController.swift in Sources */,
 				7A64E8E12B1BC2CF00EE1E05 /* AppDelegate.swift in Sources */,
 				7A64E9032B1BF37F00EE1E05 /* BookCollectionViewCell.swift in Sources */,
+				7A46AB062B1C206C007F7339 /* TabBarViewController.swift in Sources */,
 				7A64E8F92B1BCC4E00EE1E05 /* Book.swift in Sources */,
 				7A46AB032B1C0DB7007F7339 /* BookHeaderView.swift in Sources */,
 				7A64E8FF2B1BD2BF00EE1E05 /* BookSectionTableViewCell.swift in Sources */,
