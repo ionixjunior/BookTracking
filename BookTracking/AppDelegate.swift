@@ -18,14 +18,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     private func configAppearance() {
-        UILabel.appearance().font = UIFont(name: "Georgia-Bold", size: 12)
+        let fontName = "Georgia-Bold"
+        
+        UILabel.appearance().font = UIFont(name: fontName, size: 12)
         
         UINavigationBar.appearance().titleTextAttributes = [
-            NSAttributedString.Key.font: UIFont(name: "Georgia-Bold", size: 17)!
+            NSAttributedString.Key.font: UIFont(name: fontName, size: 17)!
         ]
         
         UINavigationBar.appearance().largeTitleTextAttributes = [
-            NSAttributedString.Key.font: UIFont(name: "Georgia-Bold", size: 34)!
+            NSAttributedString.Key.font: UIFont(name: fontName, size: 34)!
         ]
     }
 
