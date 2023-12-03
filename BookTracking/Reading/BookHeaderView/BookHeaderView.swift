@@ -12,7 +12,7 @@ class BookHeaderView: UIView {
     var nameLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.boldSystemFont(ofSize: 24)
+        label.font = UIFont(name: UILabel.appearance().font.fontName, size: 24)
         label.textColor = .black
         return label
     }()
