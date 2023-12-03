@@ -14,6 +14,8 @@ class BookScreen: UIView {
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         imageView.layer.cornerRadius = 8
+        imageView.layer.borderColor = UIColor.systemGray5.cgColor
+        imageView.layer.borderWidth = 1
         return imageView
     }()
     
