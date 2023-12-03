@@ -18,7 +18,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     private func configAppearance() {
-        UILabel.appearance().font = UIFont(name: "Georgia Bold", size: 12)
+        UILabel.appearance().font = UIFont(name: "Georgia-Bold", size: 12)
+        
+        UINavigationBar.appearance().titleTextAttributes = [
+            NSAttributedString.Key.font: UIFont(name: "Georgia-Bold", size: 17)!
+        ]
+        
+        UINavigationBar.appearance().largeTitleTextAttributes = [
+            NSAttributedString.Key.font: UIFont(name: "Georgia-Bold", size: 34)!
+        ]
     }
 
     // MARK: UISceneSession Lifecycle
