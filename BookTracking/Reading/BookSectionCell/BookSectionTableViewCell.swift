@@ -59,6 +59,6 @@ extension BookSectionTableViewCell: UICollectionViewDataSource {
 
 extension BookSectionTableViewCell: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 130, height: 180)
+        return CGSize(width: 120, height: 180)
     }
 }
