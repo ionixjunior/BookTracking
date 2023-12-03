@@ -16,7 +16,7 @@ class TabBarViewController: UITabBarController {
     }()
     
     private var books: UINavigationController = {
-        let vc = UIViewController()
+        let vc = LibraryViewController()
         vc.view.backgroundColor = .white
         let nav = UINavigationController(rootViewController: vc)
         return nav
