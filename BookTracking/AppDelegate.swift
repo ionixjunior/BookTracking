@@ -13,8 +13,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        configAppearance()
         return true
+    }
+    
+    private func configAppearance() {
+        UILabel.appearance().font = UIFont(name: "Georgia Bold", size: 12)
     }
 
     // MARK: UISceneSession Lifecycle
