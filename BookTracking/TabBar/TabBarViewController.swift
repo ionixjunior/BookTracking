@@ -17,10 +17,21 @@ class TabBarViewController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewControllers = [
-            reading
-        ]
+        viewControllers = [reading]
+        
+        guard let items = tabBar.items else { return }
+        
+        items[0].image = UIImage(systemName: "book")
+        items[0].setImageOnly()
     }
     
     
 }
+
+extension UITabBarItem {
+    func setImageOnly(){
+        imageInsets = UIEdgeInsets(top: 6, left: 0, bottom: -6, right: 0)
+        setTitleTextAttributes([NSAttributedString.Key.foregroundColor:UIColor.clear], for: .selected)
+        setTitleTextAttributes([NSAttributedString.Key.foregroundColor:UIColor.clear], for: .normal)
+    }
+ }
