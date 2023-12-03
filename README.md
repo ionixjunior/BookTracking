@@ -4,4 +4,4 @@ This project is an iOS app using Swift and the View Code approach. The layout wa
 
 At the moment, only the reading screen was created. This project is still under development.
 
-![Reading screen](art/reading.png){width=250}
+<img src="art/reading.png" width="250" alt="Reading screen" />
