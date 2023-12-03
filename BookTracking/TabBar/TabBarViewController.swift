@@ -38,6 +38,8 @@ class TabBarViewController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tabBar.layer.borderWidth = 1
+        tabBar.layer.borderColor = UIColor.systemGray5.cgColor
         viewControllers = [reading, books, bookmark, profile]
         
         guard let items = tabBar.items else { return }
