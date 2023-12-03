@@ -33,7 +33,13 @@ class ReadingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configNavBar()
         configTableView()
+    }
+    
+    private func configNavBar() {
+        title = "In Progress"
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
 
     private func configTableView() {
