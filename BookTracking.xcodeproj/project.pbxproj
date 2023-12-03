@@ -49,6 +49,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7A46AB002B1BFEBD007F7339 /* BookCell */ = {
+			isa = PBXGroup;
+			children = (
+				7A64E9022B1BF37F00EE1E05 /* BookCollectionViewCell.swift */,
+				7A64E9042B1BF56800EE1E05 /* BookScreen.swift */,
+			);
+			path = BookCell;
+			sourceTree = "<group>";
+		};
 		7A64E8D42B1BC2CF00EE1E05 = {
 			isa = PBXGroup;
 			children = (
@@ -82,6 +91,7 @@
 		7A64E8F42B1BC45300EE1E05 /* Reading */ = {
 			isa = PBXGroup;
 			children = (
+				7A46AB002B1BFEBD007F7339 /* BookCell */,
 				7A64E8FD2B1BD2A500EE1E05 /* BookSectionCell */,
 				7A64E8E42B1BC2CF00EE1E05 /* ReadingViewController.swift */,
 				7A64E8F52B1BC4D900EE1E05 /* ReadingScreen.swift */,
@@ -103,8 +113,6 @@
 			children = (
 				7A64E8FE2B1BD2BF00EE1E05 /* BookSectionTableViewCell.swift */,
 				7A64E9002B1BDFDD00EE1E05 /* BookSectionScreen.swift */,
-				7A64E9022B1BF37F00EE1E05 /* BookCollectionViewCell.swift */,
-				7A64E9042B1BF56800EE1E05 /* BookScreen.swift */,
 			);
 			path = BookSectionCell;
 			sourceTree = "<group>";
