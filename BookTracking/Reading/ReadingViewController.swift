@@ -42,6 +42,7 @@ class ReadingViewController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         
         let add = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(tappedAdd))
+        add.tintColor = UIColor(named: "Primary")
         navigationItem.rightBarButtonItem = add
     }
 
