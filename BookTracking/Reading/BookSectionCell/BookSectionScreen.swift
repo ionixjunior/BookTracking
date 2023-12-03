@@ -18,6 +18,7 @@ class BookSectionScreen: UIView {
         
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         cv.translatesAutoresizingMaskIntoConstraints = false
+        cv.showsHorizontalScrollIndicator = false
         
         return cv
     }()
