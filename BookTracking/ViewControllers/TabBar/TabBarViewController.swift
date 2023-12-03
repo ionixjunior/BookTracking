@@ -23,7 +23,7 @@ class TabBarViewController: UITabBarController {
     }()
     
     private var bookmark: UINavigationController = {
-        let vc = UIViewController()
+        let vc = BookmarkViewController()
         vc.view.backgroundColor = .white
         let nav = UINavigationController(rootViewController: vc)
         return nav

@@ -23,6 +23,8 @@
 		7A64E9052B1BF56800EE1E05 /* BookScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A64E9042B1BF56800EE1E05 /* BookScreen.swift */; };
 		7AA7E7C92B1CBE8D0058EC32 /* LibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA7E7C82B1CBE8D0058EC32 /* LibraryViewController.swift */; };
 		7AA7E7CB2B1CBEA70058EC32 /* LibraryScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA7E7CA2B1CBEA70058EC32 /* LibraryScreen.swift */; };
+		7AA7E7CE2B1CC0460058EC32 /* BookmarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA7E7CD2B1CC0460058EC32 /* BookmarkViewController.swift */; };
+		7AA7E7D02B1CC05A0058EC32 /* BookmarkScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA7E7CF2B1CC05A0058EC32 /* BookmarkScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,8 @@
 		7A64E9042B1BF56800EE1E05 /* BookScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookScreen.swift; sourceTree = "<group>"; };
 		7AA7E7C82B1CBE8D0058EC32 /* LibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewController.swift; sourceTree = "<group>"; };
 		7AA7E7CA2B1CBEA70058EC32 /* LibraryScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryScreen.swift; sourceTree = "<group>"; };
+		7AA7E7CD2B1CC0460058EC32 /* BookmarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkViewController.swift; sourceTree = "<group>"; };
+		7AA7E7CF2B1CC05A0058EC32 /* BookmarkScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +149,7 @@
 		7AA7E7C62B1CBDA90058EC32 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				7AA7E7CC2B1CC0360058EC32 /* Bookmark */,
 				7AA7E7C72B1CBE650058EC32 /* Library */,
 				7A46AB042B1C204B007F7339 /* TabBar */,
 				7A64E8F42B1BC45300EE1E05 /* Reading */,
@@ -159,6 +164,15 @@
 				7AA7E7CA2B1CBEA70058EC32 /* LibraryScreen.swift */,
 			);
 			path = Library;
+			sourceTree = "<group>";
+		};
+		7AA7E7CC2B1CC0360058EC32 /* Bookmark */ = {
+			isa = PBXGroup;
+			children = (
+				7AA7E7CD2B1CC0460058EC32 /* BookmarkViewController.swift */,
+				7AA7E7CF2B1CC05A0058EC32 /* BookmarkScreen.swift */,
+			);
+			path = Bookmark;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,6 +249,8 @@
 				7AA7E7CB2B1CBEA70058EC32 /* LibraryScreen.swift in Sources */,
 				7A64E8E52B1BC2CF00EE1E05 /* ReadingViewController.swift in Sources */,
 				7A64E8E12B1BC2CF00EE1E05 /* AppDelegate.swift in Sources */,
+				7AA7E7CE2B1CC0460058EC32 /* BookmarkViewController.swift in Sources */,
+				7AA7E7D02B1CC05A0058EC32 /* BookmarkScreen.swift in Sources */,
 				7A64E9032B1BF37F00EE1E05 /* BookCollectionViewCell.swift in Sources */,
 				7A46AB062B1C206C007F7339 /* TabBarViewController.swift in Sources */,
 				7A64E8F92B1BCC4E00EE1E05 /* Book.swift in Sources */,
