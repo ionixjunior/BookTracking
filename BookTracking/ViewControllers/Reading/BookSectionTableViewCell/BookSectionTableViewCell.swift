@@ -12,7 +12,7 @@ class BookSectionTableViewCell: UITableViewCell {
     static let identifier: String = String(describing: BookSectionTableViewCell.self)
     
     var bookSectionScreen: BookSectionTableViewCellScreen?
-    var books: [Book] = []
+    var viewModel: BookSectionViewModel?
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -30,7 +30,7 @@ class BookSectionTableViewCell: UITableViewCell {
     }
     
     func setUp(books: [Book]) {
-        self.books = books
+        viewModel = BookSectionViewModel(books: books)
     }
 
 }
@@ -41,12 +41,14 @@ extension BookSectionTableViewCell: UICollectionViewDelegate {
 
 extension BookSectionTableViewCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return books.count
+        return viewModel?.numberOfItemsInSection ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let viewModel = viewModel else { return UICollectionViewCell() }
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BookCollectionViewCell.identifier, for: indexPath) as? BookCollectionViewCell
-        cell?.setUp(book: books[indexPath.item])
+        cell?.setUp(book: viewModel.getBookBy(indexPath: indexPath))
         return cell ?? UICollectionViewCell()
     }
 }

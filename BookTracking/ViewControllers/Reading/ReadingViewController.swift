@@ -10,21 +10,7 @@ import UIKit
 class ReadingViewController: UIViewController {
 
     var readingScreen: ReadingViewControllerScreen?
-    var bookSections: [BookSection] = [
-        BookSection(name: "", books: [
-            Book(name: "The Effective Executive", author: "Peter F. Drucker", image: "the_effective_executive"),
-            Book(name: "Grokking Algorithms", author: "Aditya Y. Bhargava", image: "grokking_algorithms"),
-            Book(name: "Design Patterns", author: "Erich Gamma, Richard Helm, and others", image: "design_patterns"),
-        ]),
-        BookSection(name: "Next Up", books: [
-            Book(name: "Testing Swift", author: "Paul Hudson", image: "testing_swift"),
-            Book(name: "Hacking with watchOS", author: "Paul Hudson", image: "hacking_with_watchos"),
-            Book(name: "Learning Domain-Driven Design", author: "Vlad Khononov", image: "learning_domain_driven_design"),
-            Book(name: "Clean Craftsmanship", author: "Robert C. Martin", image: "clean_craftsmanship"),
-            Book(name: "Code That Fits in Your Head", author: "Mark Seemann", image: "code_that_fits_in_your_head"),
-            Book(name: "Difficult Conversations", author: "Bruce Patton, Douglas Stone, and others", image: "difficult_conversations"),
-        ])
-    ]
+    var viewModel: ReadingViewModel = ReadingViewModel()
     
     override func loadView() {
         readingScreen = ReadingViewControllerScreen()
@@ -63,7 +49,7 @@ extension ReadingViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let name = bookSections[section].name
+        let name = viewModel.getSectionNameBy(section: section)
         if name.isEmpty {
             return nil
         }
@@ -74,17 +60,13 @@ extension ReadingViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        if bookSections[section].name.isEmpty {
-            return 0
-        } else {
-            return 40
-        }
+        return viewModel.getHeightForHeaderBy(section: section)
     }
 }
 
 extension ReadingViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return bookSections.count
+        return viewModel.numberOfSections
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -93,7 +75,7 @@ extension ReadingViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: BookSectionTableViewCell.identifier) as? BookSectionTableViewCell
-        cell?.setUp(books: bookSections[indexPath.section].books)
+        cell?.setUp(books: viewModel.getBooksBy(section: indexPath.section))
         return cell ?? UITableViewCell()
     }
 }
