@@ -22,4 +22,7 @@ class HeaderTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func setUp(book: Book) {
+        screen.setUp(book: book)
+    }
 }

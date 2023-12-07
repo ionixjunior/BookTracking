@@ -24,6 +24,7 @@ class BookViewController: UIViewController {
     }
     
     override func loadView() {
+        viewModel = BookViewModel(book: book)
         screen = BookViewControllerScreen()
         screen?.configDelegates(delegate: self, dataSource: self)
         view = screen
@@ -36,16 +37,19 @@ class BookViewController: UIViewController {
 }
 
 extension BookViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return viewModel?.getHeightBy(section: indexPath.section) ?? 0
+    }
 }
 
 extension BookViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return viewModel?.numberOfRowsIn(section: section) ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: HeaderTableViewCell.identifider, for: indexPath) as? HeaderTableViewCell
+        cell?.setUp(book: book)
+        return cell ?? UITableViewCell()
     }
-    
 }
