@@ -18,11 +18,7 @@ class BookSectionTableViewCell: UITableViewCell {
     var bookSectionScreen: BookSectionTableViewCellScreen?
     var viewModel: BookSectionViewModel?
     
-    private weak var _delegate: BookSectionTableViewCellProtocol?
-    var delegate: BookSectionTableViewCellProtocol? {
-        get { return _delegate }
-        set { _delegate = newValue }
-    }
+    weak var delegate: BookSectionTableViewCellProtocol?
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
