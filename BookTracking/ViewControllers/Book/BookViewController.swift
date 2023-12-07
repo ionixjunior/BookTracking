@@ -10,6 +10,7 @@ import UIKit
 class BookViewController: UIViewController {
 
     private var screen: BookViewControllerScreen?
+    private var viewModel: BookViewModel?
     
     private var book: Book
     
