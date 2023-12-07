@@ -35,8 +35,8 @@ class HeaderTableViewCellScreen: UIView {
         NSLayoutConstraint.activate([
             topAnchor.constraint(equalTo: superView.topAnchor),
             bottomAnchor.constraint(equalTo: superView.bottomAnchor),
-            leadingAnchor.constraint(equalTo: superView.leadingAnchor),
-            trailingAnchor.constraint(equalTo: superView.trailingAnchor),
+            leadingAnchor.constraint(equalTo: superView.leadingAnchor, constant: 20),
+            trailingAnchor.constraint(equalTo: superView.trailingAnchor, constant: 20),
             
             bookImageView.topAnchor.constraint(equalTo: topAnchor),
             bookImageView.leadingAnchor.constraint(equalTo: leadingAnchor),
