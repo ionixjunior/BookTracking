@@ -24,6 +24,6 @@ class BookCollectionViewCell: UICollectionViewCell {
     }
     
     func setUp(book: Book) {
-        bookScreen?.bookImageView.image = UIImage(named: book.image)
+        bookScreen?.setUp(book: book)
     }
 }

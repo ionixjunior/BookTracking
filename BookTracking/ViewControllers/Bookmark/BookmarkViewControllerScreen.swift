@@ -8,7 +8,7 @@
 import UIKit
 
 class BookmarkViewControllerScreen: UIView {
-    var textLabel: UILabel = {
+    private lazy var textLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont(name: UILabel.appearance().font.fontName, size: 30)

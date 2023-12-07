@@ -9,10 +9,11 @@ import UIKit
 
 class ReadingViewControllerScreen: UIView {
     
-    var tableView: UITableView = {
+    private lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.separatorStyle = .none
+        tableView.register(BookSectionTableViewCell.self, forCellReuseIdentifier: BookSectionTableViewCell.identifier)
         return tableView
     }()
 
@@ -40,4 +41,8 @@ class ReadingViewControllerScreen: UIView {
         ])
     }
     
+    func configDelegates(delegate: UITableViewDelegate, dataSource: UITableViewDataSource) {
+        tableView.delegate = delegate
+        tableView.dataSource = dataSource
+    }
 }

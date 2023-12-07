@@ -9,7 +9,7 @@ import UIKit
 
 class BookHeaderView: UIView {
     
-    var nameLabel: UILabel = {
+    private lazy var nameLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont(name: UILabel.appearance().font.fontName, size: 24)
@@ -39,4 +39,7 @@ class BookHeaderView: UIView {
         ])
     }
     
+    func setName(name: String) {
+        nameLabel.text = name
+    }
 }

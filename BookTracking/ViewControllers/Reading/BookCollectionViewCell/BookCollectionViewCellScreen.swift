@@ -8,7 +8,7 @@
 import UIKit
 
 class BookCollectionViewCellScreen: UIView {
-    var bookImageView: UIImageView = {
+    private lazy var bookImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFill
@@ -43,5 +43,9 @@ class BookCollectionViewCellScreen: UIView {
             bookImageView.widthAnchor.constraint(equalTo: view.widthAnchor),
             bookImageView.heightAnchor.constraint(equalTo: view.heightAnchor),
         ])
+    }
+    
+    func setUp(book: Book) {
+        bookImageView.image = UIImage(named: book.image)
     }
 }

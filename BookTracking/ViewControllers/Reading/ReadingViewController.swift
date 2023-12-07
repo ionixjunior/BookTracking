@@ -34,7 +34,7 @@ class ReadingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configNavBar()
-        configTableView()
+        readingScreen?.configDelegates(delegate: self, dataSource: self)
     }
     
     private func configNavBar() {
@@ -50,12 +50,6 @@ class ReadingViewController: UIViewController {
         search.obscuresBackgroundDuringPresentation = true
         search.searchBar.placeholder = "Search"
         navigationItem.searchController = search
-    }
-
-    private func configTableView() {
-        readingScreen?.tableView.delegate = self
-        readingScreen?.tableView.dataSource = self
-        readingScreen?.tableView.register(BookSectionTableViewCell.self, forCellReuseIdentifier: BookSectionTableViewCell.identifier)
     }
 
     @objc func tappedAdd(_ sender: Any) {
@@ -75,7 +69,7 @@ extension ReadingViewController: UITableViewDelegate {
         }
         
         let view = BookHeaderView()
-        view.nameLabel.text = name
+        view.setName(name: name)
         return view
     }
     
