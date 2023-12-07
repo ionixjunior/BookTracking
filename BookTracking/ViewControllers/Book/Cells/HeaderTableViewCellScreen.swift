@@ -8,15 +8,27 @@
 import UIKit
 
 class HeaderTableViewCellScreen: UIView {
+    
+    private lazy var bookImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
+        imageView.layer.cornerRadius = 8
+        imageView.layer.borderColor = UIColor.systemGray5.cgColor
+        imageView.layer.borderWidth = 1
+        return imageView
+    }()
+    
     func configScreen(superView: UIView) {
         translatesAutoresizingMaskIntoConstraints = false
-        superView.addSubview(self)
-        addViews()
+        addViews(superView)
         configConstraints(superView)
     }
     
-    private func addViews() {
-        
+    private func addViews(_ superView: UIView) {
+        superView.addSubview(self)
+        addSubview(bookImageView)
     }
     
     private func configConstraints(_ superView: UIView) {
@@ -25,6 +37,15 @@ class HeaderTableViewCellScreen: UIView {
             bottomAnchor.constraint(equalTo: superView.bottomAnchor),
             leadingAnchor.constraint(equalTo: superView.leadingAnchor),
             trailingAnchor.constraint(equalTo: superView.trailingAnchor),
+            
+            bookImageView.topAnchor.constraint(equalTo: topAnchor),
+            bookImageView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            bookImageView.widthAnchor.constraint(equalToConstant: 120),
+            bookImageView.heightAnchor.constraint(equalToConstant: 180),
         ])
+    }
+    
+    func setUp(book: Book) {
+        bookImageView.image = UIImage(named: book.image)
     }
 }
