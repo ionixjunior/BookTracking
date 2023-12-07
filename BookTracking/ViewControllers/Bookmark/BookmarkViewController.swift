@@ -9,10 +9,10 @@ import UIKit
 
 class BookmarkViewController: UIViewController {
 
-    var bookmarkScreen: BookmarkScreen?
+    var bookmarkScreen: BookmarkViewControllerScreen?
     
     override func loadView() {
-        bookmarkScreen = BookmarkScreen()
+        bookmarkScreen = BookmarkViewControllerScreen()
         view = bookmarkScreen
     }
     

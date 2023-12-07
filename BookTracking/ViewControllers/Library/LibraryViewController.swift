@@ -9,10 +9,10 @@ import UIKit
 
 class LibraryViewController: UIViewController {
 
-    var libraryScreen: LibraryScreen?
+    var libraryScreen: LibraryViewControllerScreen?
     
     override func loadView() {
-        libraryScreen = LibraryScreen()
+        libraryScreen = LibraryViewControllerScreen()
         view = libraryScreen
     }
     

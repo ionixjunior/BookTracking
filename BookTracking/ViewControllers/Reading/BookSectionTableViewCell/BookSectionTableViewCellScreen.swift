@@ -7,7 +7,7 @@
 
 import UIKit
 
-class BookSectionScreen: UIView {
+class BookSectionTableViewCellScreen: UIView {
     
     var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()

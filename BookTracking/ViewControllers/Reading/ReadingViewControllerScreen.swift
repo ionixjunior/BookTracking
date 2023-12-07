@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ReadingScreen: UIView {
+class ReadingViewControllerScreen: UIView {
     
     var tableView: UITableView = {
         let tableView = UITableView()

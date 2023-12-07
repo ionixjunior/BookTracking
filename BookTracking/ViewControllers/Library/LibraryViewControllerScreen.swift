@@ -1,5 +1,5 @@
 //
-//  BookmarkScreen.swift
+//  LibraryScreen.swift
 //  BookTracking
 //
 //  Created by Ione Souza Junior on 03/12/23.
@@ -7,7 +7,8 @@
 
 import UIKit
 
-class BookmarkScreen: UIView {
+class LibraryViewControllerScreen: UIView {
+    
     var textLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false

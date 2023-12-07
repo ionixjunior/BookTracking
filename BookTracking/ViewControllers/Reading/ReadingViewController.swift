@@ -9,7 +9,7 @@ import UIKit
 
 class ReadingViewController: UIViewController {
 
-    var readingScreen: ReadingScreen?
+    var readingScreen: ReadingViewControllerScreen?
     var bookSections: [BookSection] = [
         BookSection(name: "", books: [
             Book(name: "The Effective Executive", author: "Peter F. Drucker", image: "the_effective_executive"),
@@ -27,7 +27,7 @@ class ReadingViewController: UIViewController {
     ]
     
     override func loadView() {
-        readingScreen = ReadingScreen()
+        readingScreen = ReadingViewControllerScreen()
         view = readingScreen
     }
     

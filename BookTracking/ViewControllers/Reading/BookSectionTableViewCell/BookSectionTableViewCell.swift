@@ -11,12 +11,12 @@ class BookSectionTableViewCell: UITableViewCell {
     
     static let identifier: String = String(describing: BookSectionTableViewCell.self)
     
-    var bookSectionScreen: BookSectionScreen?
+    var bookSectionScreen: BookSectionTableViewCellScreen?
     var books: [Book] = []
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        bookSectionScreen = BookSectionScreen()
+        bookSectionScreen = BookSectionTableViewCellScreen()
         bookSectionScreen?.configScreen(view: contentView)
         configCollectionView()
     }

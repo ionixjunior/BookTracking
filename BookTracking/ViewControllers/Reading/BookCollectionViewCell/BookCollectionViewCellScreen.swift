@@ -7,7 +7,7 @@
 
 import UIKit
 
-class BookScreen: UIView {
+class BookCollectionViewCellScreen: UIView {
     var bookImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false

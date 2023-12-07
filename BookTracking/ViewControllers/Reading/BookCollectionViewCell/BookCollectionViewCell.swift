@@ -9,13 +9,13 @@ import UIKit
 
 class BookCollectionViewCell: UICollectionViewCell {
     
-    var bookScreen: BookScreen?
+    var bookScreen: BookCollectionViewCellScreen?
     
     static let identifier: String = String(describing: BookCollectionViewCell.self)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        bookScreen = BookScreen()
+        bookScreen = BookCollectionViewCellScreen()
         bookScreen?.configScreen(view: contentView)
     }
     

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ProfileScreen: UIView {
+class ProfileViewControllerScreen: UIView {
 
     var textLabel: UILabel = {
         let label = UILabel()
