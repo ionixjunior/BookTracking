@@ -20,6 +20,15 @@ class HeaderTableViewCellScreen: UIView {
         return imageView
     }()
     
+    private lazy var nameLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont(name: UILabel.appearance().font.fontName, size: 20)
+        label.textColor = .black
+        label.numberOfLines = 0
+        return label
+    }()
+    
     func configScreen(superView: UIView) {
         translatesAutoresizingMaskIntoConstraints = false
         addViews(superView)
@@ -29,6 +38,7 @@ class HeaderTableViewCellScreen: UIView {
     private func addViews(_ superView: UIView) {
         superView.addSubview(self)
         addSubview(bookImageView)
+        addSubview(nameLabel)
     }
     
     private func configConstraints(_ superView: UIView) {
@@ -36,16 +46,21 @@ class HeaderTableViewCellScreen: UIView {
             topAnchor.constraint(equalTo: superView.topAnchor),
             bottomAnchor.constraint(equalTo: superView.bottomAnchor),
             leadingAnchor.constraint(equalTo: superView.leadingAnchor, constant: 20),
-            trailingAnchor.constraint(equalTo: superView.trailingAnchor, constant: 20),
+            trailingAnchor.constraint(equalTo: superView.trailingAnchor, constant: -20),
             
             bookImageView.topAnchor.constraint(equalTo: topAnchor),
             bookImageView.leadingAnchor.constraint(equalTo: leadingAnchor),
             bookImageView.widthAnchor.constraint(equalToConstant: 120),
             bookImageView.heightAnchor.constraint(equalToConstant: 180),
+            
+            nameLabel.topAnchor.constraint(equalTo: topAnchor),
+            nameLabel.leadingAnchor.constraint(equalTo: bookImageView.trailingAnchor, constant: 20),
+            nameLabel.trailingAnchor.constraint(equalTo: trailingAnchor)
         ])
     }
     
     func setUp(book: Book) {
         bookImageView.image = UIImage(named: book.image)
+        nameLabel.text = book.name
     }
 }
