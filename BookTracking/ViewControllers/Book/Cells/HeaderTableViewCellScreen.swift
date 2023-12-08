@@ -55,6 +55,12 @@ class HeaderTableViewCellScreen: UIView {
         return label
     }()
     
+    private lazy var statusIcon: UIImageView = {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
+    
     func configScreen(superView: UIView) {
         translatesAutoresizingMaskIntoConstraints = false
         addViews(superView)
@@ -67,6 +73,7 @@ class HeaderTableViewCellScreen: UIView {
         addSubview(nameLabel)
         addSubview(authorLabel)
         addSubview(statusView)
+        statusView.addSubview(statusIcon)
         statusView.addSubview(statusLabel)
     }
     
@@ -95,9 +102,13 @@ class HeaderTableViewCellScreen: UIView {
             statusView.widthAnchor.constraint(greaterThanOrEqualToConstant: 20),
             statusView.heightAnchor.constraint(greaterThanOrEqualToConstant: 20),
             
+            statusIcon.topAnchor.constraint(equalTo: statusView.topAnchor, constant: 6),
+            statusIcon.leadingAnchor.constraint(equalTo: statusView.leadingAnchor, constant: 6),
+            statusIcon.bottomAnchor.constraint(equalTo: statusView.bottomAnchor, constant: -6),
+            
             statusLabel.topAnchor.constraint(equalTo: statusView.topAnchor, constant: 6),
             statusLabel.bottomAnchor.constraint(equalTo: statusView.bottomAnchor, constant: -6),
-            statusLabel.leadingAnchor.constraint(equalTo: statusView.leadingAnchor, constant: 6),
+            statusLabel.leadingAnchor.constraint(equalTo: statusIcon.trailingAnchor, constant: 4),
             statusLabel.trailingAnchor.constraint(equalTo: statusView.trailingAnchor, constant: -6),
         ])
     }
@@ -110,10 +121,13 @@ class HeaderTableViewCellScreen: UIView {
         switch book.status {
         case .wantToRead:
             statusLabel.text = "WANT TO READ"
+            statusIcon.image = UIImage(systemName: "arrowshape.turn.up.right.circle.fill")
         case .inProgress:
             statusLabel.text = "IN PROGRESS"
+            statusIcon.image = UIImage(systemName: "clock.fill")
         case .read:
             statusLabel.text = "READ"
+            statusIcon.image = UIImage(systemName: "checkmark.circle.fill")
         }
     }
 }
