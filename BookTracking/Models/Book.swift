@@ -6,9 +6,7 @@
 //
 
 enum BookStatus {
-    case wantToRead
-    case inProgress
-    case read
+    case wantToRead, inProgress, read
 }
 
 struct Book {
