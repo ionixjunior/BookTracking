@@ -38,6 +38,23 @@ class HeaderTableViewCellScreen: UIView {
         return label
     }()
     
+    private lazy var statusView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = UIColor(named: "AccentColor")?.withAlphaComponent(0.2)
+        view.layer.cornerRadius = 14
+        view.clipsToBounds = true
+        return view
+    }()
+    
+    private lazy var statusLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = UIColor(named: "AccentColor")
+        label.font = UIFont.boldSystemFont(ofSize: 14)
+        return label
+    }()
+    
     func configScreen(superView: UIView) {
         translatesAutoresizingMaskIntoConstraints = false
         addViews(superView)
@@ -49,6 +66,8 @@ class HeaderTableViewCellScreen: UIView {
         addSubview(bookImageView)
         addSubview(nameLabel)
         addSubview(authorLabel)
+        addSubview(statusView)
+        statusView.addSubview(statusLabel)
     }
     
     private func configConstraints(_ superView: UIView) {
@@ -70,6 +89,16 @@ class HeaderTableViewCellScreen: UIView {
             authorLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 4),
             authorLabel.leadingAnchor.constraint(equalTo: nameLabel.leadingAnchor),
             authorLabel.trailingAnchor.constraint(equalTo: nameLabel.trailingAnchor),
+            
+            statusView.topAnchor.constraint(equalTo: authorLabel.bottomAnchor, constant: 10),
+            statusView.leadingAnchor.constraint(equalTo: nameLabel.leadingAnchor),
+            statusView.widthAnchor.constraint(greaterThanOrEqualToConstant: 20),
+            statusView.heightAnchor.constraint(greaterThanOrEqualToConstant: 20),
+            
+            statusLabel.topAnchor.constraint(equalTo: statusView.topAnchor, constant: 6),
+            statusLabel.bottomAnchor.constraint(equalTo: statusView.bottomAnchor, constant: -6),
+            statusLabel.leadingAnchor.constraint(equalTo: statusView.leadingAnchor, constant: 6),
+            statusLabel.trailingAnchor.constraint(equalTo: statusView.trailingAnchor, constant: -6),
         ])
     }
     
@@ -77,5 +106,14 @@ class HeaderTableViewCellScreen: UIView {
         bookImageView.image = UIImage(named: book.image)
         nameLabel.text = book.name
         authorLabel.text = book.author
+        
+        switch book.status {
+        case .wantToRead:
+            statusLabel.text = "WANT TO READ"
+        case .inProgress:
+            statusLabel.text = "IN PROGRESS"
+        case .read:
+            statusLabel.text = "READ"
+        }
     }
 }
