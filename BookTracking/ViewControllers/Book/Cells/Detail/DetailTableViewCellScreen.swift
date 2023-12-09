@@ -19,6 +19,7 @@ class DetailTableViewCellScreen: UIView {
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         cv.translatesAutoresizingMaskIntoConstraints = false
         cv.showsHorizontalScrollIndicator = false
+        cv.register(DetailTextCollectionViewCell.self, forCellWithReuseIdentifier: DetailTextCollectionViewCell.identifier)
         
         return cv
     }()
