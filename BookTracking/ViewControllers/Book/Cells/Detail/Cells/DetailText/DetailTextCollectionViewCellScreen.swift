@@ -8,6 +8,33 @@
 import UIKit
 
 class DetailTextCollectionViewCellScreen: UIView {
+    
+    private lazy var stackView: UIStackView = {
+        let sv = UIStackView()
+        sv.translatesAutoresizingMaskIntoConstraints = false
+        return sv
+    }()
+    
+    private lazy var attributeLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = .systemGray2
+        return label
+    }()
+    
+    private lazy var valueLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = .black
+        return label
+    }()
+    
+    private lazy var descriptionLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = .systemGray2
+        return label
+    }()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -24,6 +51,10 @@ class DetailTextCollectionViewCellScreen: UIView {
     
     private func addViews(_ superView: UIView) {
         superView.addSubview(self)
+        addSubview(stackView)
+        stackView.addSubview(attributeLabel)
+        stackView.addSubview(valueLabel)
+        stackView.addSubview(descriptionLabel)
     }
     
     private func configConstraints(_ superView: UIView) {
@@ -32,6 +63,11 @@ class DetailTextCollectionViewCellScreen: UIView {
             leadingAnchor.constraint(equalTo: superView.leadingAnchor),
             trailingAnchor.constraint(equalTo: superView.trailingAnchor),
             bottomAnchor.constraint(equalTo: superView.bottomAnchor),
+            
+            stackView.topAnchor.constraint(equalTo: topAnchor),
+            stackView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            stackView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            stackView.bottomAnchor.constraint(equalTo: bottomAnchor),
         ])
     }
     
