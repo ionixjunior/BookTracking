@@ -10,6 +10,7 @@ import UIKit
 enum Sections: Int, CaseIterable {
     case header = 0
     case description = 1
+    case detail = 2
 }
 
 class BookViewModel {
@@ -33,6 +34,10 @@ class BookViewModel {
             return 1
         }
         
+        if section == Sections.detail.rawValue {
+            return 1
+        }
+        
         return 0
     }
     
@@ -42,6 +47,10 @@ class BookViewModel {
         }
         
         if section == Sections.description.rawValue {
+            return 148
+        }
+        
+        if section == Sections.detail.rawValue {
             return 148
         }
         
