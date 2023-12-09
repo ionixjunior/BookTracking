@@ -61,6 +61,13 @@ class HeaderTableViewCellScreen: UIView {
         return button
     }()
     
+    private lazy var separatorView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .systemGray5
+        return view
+    }()
+    
     func configScreen(superView: UIView) {
         translatesAutoresizingMaskIntoConstraints = false
         addViews(superView)
@@ -76,6 +83,7 @@ class HeaderTableViewCellScreen: UIView {
         statusView.addSubview(statusIcon)
         statusView.addSubview(statusLabel)
         addSubview(moreButton)
+        addSubview(separatorView)
     }
     
     private func configConstraints(_ superView: UIView) {
@@ -114,6 +122,11 @@ class HeaderTableViewCellScreen: UIView {
             
             moreButton.bottomAnchor.constraint(equalTo: bookImageView.bottomAnchor),
             moreButton.trailingAnchor.constraint(equalTo: nameLabel.trailingAnchor),
+            
+            separatorView.topAnchor.constraint(equalTo: bookImageView.bottomAnchor, constant: 30),
+            separatorView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            separatorView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            separatorView.heightAnchor.constraint(equalToConstant: 1),
         ])
     }
     
