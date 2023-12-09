@@ -30,6 +30,8 @@
 		7AA794EA2B24B8780091A9C8 /* DescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA794E92B24B8780091A9C8 /* DescriptionTableViewCell.swift */; };
 		7AA794EC2B24B8B90091A9C8 /* DescriptionTableViewCellScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA794EB2B24B8B90091A9C8 /* DescriptionTableViewCellScreen.swift */; };
 		7AA794EE2B24EBC70091A9C8 /* BookDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA794ED2B24EBC70091A9C8 /* BookDetail.swift */; };
+		7AA794F12B24F1250091A9C8 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA794F02B24F1250091A9C8 /* DetailTableViewCell.swift */; };
+		7AA794F32B24F1390091A9C8 /* DetailTableViewCellScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA794F22B24F1390091A9C8 /* DetailTableViewCellScreen.swift */; };
 		7AA7E7C92B1CBE8D0058EC32 /* LibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA7E7C82B1CBE8D0058EC32 /* LibraryViewController.swift */; };
 		7AA7E7CB2B1CBEA70058EC32 /* LibraryViewControllerScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA7E7CA2B1CBEA70058EC32 /* LibraryViewControllerScreen.swift */; };
 		7AA7E7CE2B1CC0460058EC32 /* BookmarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA7E7CD2B1CC0460058EC32 /* BookmarkViewController.swift */; };
@@ -68,6 +70,8 @@
 		7AA794E92B24B8780091A9C8 /* DescriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionTableViewCell.swift; sourceTree = "<group>"; };
 		7AA794EB2B24B8B90091A9C8 /* DescriptionTableViewCellScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionTableViewCellScreen.swift; sourceTree = "<group>"; };
 		7AA794ED2B24EBC70091A9C8 /* BookDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetail.swift; sourceTree = "<group>"; };
+		7AA794F02B24F1250091A9C8 /* DetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
+		7AA794F22B24F1390091A9C8 /* DetailTableViewCellScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewCellScreen.swift; sourceTree = "<group>"; };
 		7AA7E7C82B1CBE8D0058EC32 /* LibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewController.swift; sourceTree = "<group>"; };
 		7AA7E7CA2B1CBEA70058EC32 /* LibraryViewControllerScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewControllerScreen.swift; sourceTree = "<group>"; };
 		7AA7E7CD2B1CC0460058EC32 /* BookmarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkViewController.swift; sourceTree = "<group>"; };
@@ -184,6 +188,7 @@
 		7A6B5FEB2B216A7900AAD21D /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				7AA794EF2B24F0F40091A9C8 /* Detail */,
 				7AA794E82B24B8620091A9C8 /* Description */,
 				7AA794E72B24B8380091A9C8 /* Header */,
 			);
@@ -223,6 +228,15 @@
 				7AA794EB2B24B8B90091A9C8 /* DescriptionTableViewCellScreen.swift */,
 			);
 			path = Description;
+			sourceTree = "<group>";
+		};
+		7AA794EF2B24F0F40091A9C8 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				7AA794F02B24F1250091A9C8 /* DetailTableViewCell.swift */,
+				7AA794F22B24F1390091A9C8 /* DetailTableViewCellScreen.swift */,
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 		7AA7E7C62B1CBDA90058EC32 /* ViewControllers */ = {
@@ -356,6 +370,7 @@
 				7AA7E7CE2B1CC0460058EC32 /* BookmarkViewController.swift in Sources */,
 				7AA7E7D02B1CC05A0058EC32 /* BookmarkViewControllerScreen.swift in Sources */,
 				7A6B5FEF2B216AB900AAD21D /* HeaderTableViewCellScreen.swift in Sources */,
+				7AA794F12B24F1250091A9C8 /* DetailTableViewCell.swift in Sources */,
 				7A8DB69F2B23F4020019DC91 /* SeparatorViewComponent.swift in Sources */,
 				7AA7E7D52B1CC0C70058EC32 /* ProfileViewController.swift in Sources */,
 				7A8DB69A2B23EB3B0019DC91 /* UIImage.swift in Sources */,
@@ -365,6 +380,7 @@
 				7A8DB69D2B23F0E10019DC91 /* BookCoverComponent.swift in Sources */,
 				7A64E8F92B1BCC4E00EE1E05 /* Book.swift in Sources */,
 				7AA794EC2B24B8B90091A9C8 /* DescriptionTableViewCellScreen.swift in Sources */,
+				7AA794F32B24F1390091A9C8 /* DetailTableViewCellScreen.swift in Sources */,
 				7AFC6E862B215AA200121C4B /* BookViewControllerScreen.swift in Sources */,
 				7A46AB032B1C0DB7007F7339 /* BookHeaderView.swift in Sources */,
 				7A6B5FED2B216A9900AAD21D /* HeaderTableViewCell.swift in Sources */,
