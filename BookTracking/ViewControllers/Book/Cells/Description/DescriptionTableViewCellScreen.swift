@@ -28,6 +28,10 @@ class DescriptionTableViewCellScreen: UIView {
         return label
     }()
     
+    private lazy var separatorView: UIView = {
+        return SeparatorViewComponent(frame: .zero)
+    }()
+    
     func configScreen(superView: UIView) {
         translatesAutoresizingMaskIntoConstraints = false
         addViews(superView)
@@ -38,6 +42,7 @@ class DescriptionTableViewCellScreen: UIView {
         superView.addSubview(self)
         addSubview(descriptionLabel)
         addSubview(bookDescriptionLabel)
+        addSubview(separatorView)
     }
     
     private func configConstraints(_ superView: UIView) {
@@ -54,6 +59,11 @@ class DescriptionTableViewCellScreen: UIView {
             bookDescriptionLabel.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 20),
             bookDescriptionLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
             bookDescriptionLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
+            
+            separatorView.topAnchor.constraint(equalTo: bookDescriptionLabel.bottomAnchor, constant: 30),
+            separatorView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            separatorView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            separatorView.heightAnchor.constraint(equalToConstant: 1),
         ])
     }
 
