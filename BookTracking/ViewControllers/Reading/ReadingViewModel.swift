@@ -12,7 +12,6 @@ class ReadingViewModel {
         BookSection(name: "", books: [
             Book(name: "The Effective Executive", author: "Peter F. Drucker", image: "the_effective_executive", status: .inProgress, description: """
 What makes an effective executive?
-
 The measure of the executive, Peter F. Drucker reminds us, is the ability to "get the right things done." This usually involves doing what other people have overlooked as well as avoiding what is unproductive. Intelligence, imagination, and knowledge may all be wasted in an executive job without the acquired habits of mind that mold them into results.
 
 Drucker identifies five practices essential to business effectiveness that can, and must, be learned:
@@ -24,7 +23,6 @@ Knitting all of them together with effective decision-making
 Ranging widely through the annals of business and government, Peter F. Drucker demonstrates the distinctive skill of the executive and offers fresh insights into old and seemingly obvious business situations.
 """),
             Book(name: "Grokking Algorithms", author: "Aditya Y. Bhargava", image: "grokking_algorithms", status: .inProgress, description: """
-Summary
 Grokking Algorithms is a fully illustrated, friendly guide that teaches you how to apply common algorithms to the practical problems you face every day as a programmer. You'll start with sorting and searching and, as you build up your skills in thinking algorithmically, you'll tackle more complex concerns such as data compression and artificial intelligence. Each carefully presented example includes helpful diagrams and fully annotated code samples in Python.
 
 Learning about algorithms doesn't have to be boring! Get a sneak peek at the fun, illustrated, and friendly examples you'll find in Grokking Algorithms on Manning Publications' YouTube channel.
@@ -70,7 +68,6 @@ K-nearest neighbors
 """),
             Book(name: "Design Patterns", author: "Erich Gamma, Richard Helm, and others", image: "design_patterns", status: .inProgress, description: """
 The Gang of Four’s seminal catalog of 23 patterns to solve commonly occurring design problems
-
 Patterns allow designers to create more flexible, elegant, and ultimately reusable designs without having to rediscover the design solutions themselves. Highly influential, Design Patterns is a modern classic that introduces what patterns are and how they can help you design object-oriented software and provides a catalog of simple solutions for those already programming in at last one object-oriented programming language.
 
  Each pattern:
@@ -84,9 +81,7 @@ From the preface: “Once you the design patterns and have had an ‘Aha!’ (an
         BookSection(name: "Next Up", books: [
             Book(name: "Testing Swift", author: "Paul Hudson", image: "testing_swift", status: .wantToRead, description: """
 Testing Swift will give you a thorough grounding in the key testing techniques when working in app development. You'll learn how to benchmark performance, detect regressions, mock components, refactor for testability, and more.
-
 While reading, you'll learn all this and more:
-
 Structuring your code to make unit testing easier and more reliable.
 Automating your test process so that you can identify problems faster.
 Using the red-green-refactor approach to building high-quality, testable code efficiently.
@@ -98,7 +93,6 @@ Testing Swift also includes complete projects that show you the techniques in ac
 """),
             Book(name: "Hacking with watchOS", author: "Paul Hudson", image: "hacking_with_watchos", status: .wantToRead, description: """
 If you already read Hacking with Swift, Hacking with macOS, or Pro Swift, you'll already know exactly how Hacking with watchOS is structured: I've designed a collection of app projects that teach all the core system frameworks, including SwiftUI, then ordered them so you start to learn with easy projects and work your way up over time.
-
 Hacking with watchOS teaches you SwiftUI through real-world projects. There's a comprehensive Swift introduction for beginners, but I'm also packing the book with hints and tips that help you transfer your existing iOS skills to watchOS painlessly.
 
 Hacking with watchOS includes 12 projects in total: four apps, four games, and four technique projects that focus on specific watchOS APIs. The projects are:
@@ -166,7 +160,6 @@ Register your book for convenient access to downloads, updates, and/or correctio
 """),
             Book(name: "Difficult Conversations", author: "Bruce Patton, Douglas Stone, and others", image: "difficult_conversations", status: .wantToRead, description: """
 The 10th-anniversary edition of the New York Times business bestseller-now updated with "Answers to Ten Questions People Ask"
-
 We attempt or avoid difficult conversations every day-whether dealing with an underperforming employee, disagreeing with a spouse, or negotiating with a client. From the Harvard Negotiation Project, the organization that brought you Getting to Yes, Difficult Conversations provides a step-by-step approach to having those tough conversations with less stress and more success. you'll learn how to:
 
 · Decipher the underlying structure of every difficult conversation
