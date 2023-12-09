@@ -21,7 +21,12 @@ Knowing where and how to mobilize strength for best effect
 Setting the right priorities
 Knitting all of them together with effective decision-making
 Ranging widely through the annals of business and government, Peter F. Drucker demonstrates the distinctive skill of the executive and offers fresh insights into old and seemingly obvious business situations.
-"""),
+""", details: [
+    BookDetail(attribute: "GENRE", valueText: nil, valueIcon: "star.fill", description: "Leadership"),
+    BookDetail(attribute: "RELEASED", valueText: "2016", valueIcon: nil, description: "3 January"),
+    BookDetail(attribute: "LENGTH", valueText: "178", valueIcon: nil, description: "Pages"),
+    BookDetail(attribute: "LANGUAGE", valueText: nil, valueIcon: "globe.americas.fill", description: "English"),
+]),
             Book(name: "Grokking Algorithms", author: "Aditya Y. Bhargava", image: "grokking_algorithms", status: .inProgress, description: """
 Grokking Algorithms is a fully illustrated, friendly guide that teaches you how to apply common algorithms to the practical problems you face every day as a programmer. You'll start with sorting and searching and, as you build up your skills in thinking algorithmically, you'll tackle more complex concerns such as data compression and artificial intelligence. Each carefully presented example includes helpful diagrams and fully annotated code samples in Python.
 
@@ -65,7 +70,12 @@ Dijkstra's algorithm
 Greedy algorithms
 Dynamic programming
 K-nearest neighbors
-"""),
+""", details: [
+    BookDetail(attribute: "GENRE", valueText: nil, valueIcon: "star.fill", description: "Programming"),
+    BookDetail(attribute: "RELEASED", valueText: "2016", valueIcon: nil, description: "30 May"),
+    BookDetail(attribute: "LENGTH", valueText: "256", valueIcon: nil, description: "Pages"),
+    BookDetail(attribute: "LANGUAGE", valueText: nil, valueIcon: "globe.americas.fill", description: "English"),
+]),
             Book(name: "Design Patterns", author: "Erich Gamma, Richard Helm, and others", image: "design_patterns", status: .inProgress, description: """
 The Gang of Four’s seminal catalog of 23 patterns to solve commonly occurring design problems
 Patterns allow designers to create more flexible, elegant, and ultimately reusable designs without having to rediscover the design solutions themselves. Highly influential, Design Patterns is a modern classic that introduces what patterns are and how they can help you design object-oriented software and provides a catalog of simple solutions for those already programming in at last one object-oriented programming language.
@@ -76,7 +86,12 @@ Describes the circumstances in which it is applicable, when it can be applied in
 Is compiled from real systems and based on real-world examples
 Includes downloadable C++ source code that demonstrates how patterns can be implemented and Python
 From the preface: “Once you the design patterns and have had an ‘Aha!’ (and not just a ‘Huh?’) experience with them, you won't ever think about object-oriented design in the same way. You'll have insights that can make your own designs more flexible, modular, reusable, and understandable - which is why you're interested in object-oriented technology in the first place, right?”
-"""),
+""", details: [
+    BookDetail(attribute: "GENRE", valueText: nil, valueIcon: "star.fill", description: "Programming"),
+    BookDetail(attribute: "RELEASED", valueText: "1994", valueIcon: nil, description: "31 October"),
+    BookDetail(attribute: "LENGTH", valueText: "394", valueIcon: nil, description: "Pages"),
+    BookDetail(attribute: "LANGUAGE", valueText: nil, valueIcon: "globe.americas.fill", description: "English"),
+]),
         ]),
         BookSection(name: "Next Up", books: [
             Book(name: "Testing Swift", author: "Paul Hudson", image: "testing_swift", status: .wantToRead, description: """
@@ -90,7 +105,12 @@ When code coverage is a useful metric to track your progress – and when it isn
 Integrating a sustainable approach to testing that helps your team work faster and with fewer regressions.
 How to separate your model layer from your presentation layer, how to create useful stubs and mocks the hassle-free way, how to build a custom approach to testing that fits your company, project, and team – and more!
 Testing Swift also includes complete projects that show you the techniques in action, so you can see how to apply what you've learned in real-world code. If you're serious about writing better code, it's time to step up your game and test your Swift – buy Testing Swift today!
-"""),
+""", details: [
+    BookDetail(attribute: "GENRE", valueText: nil, valueIcon: "star.fill", description: "Programming"),
+    BookDetail(attribute: "RELEASED", valueText: "2016", valueIcon: nil, description: "30 August"),
+    BookDetail(attribute: "LENGTH", valueText: "248", valueIcon: nil, description: "Pages"),
+    BookDetail(attribute: "LANGUAGE", valueText: nil, valueIcon: "globe.americas.fill", description: "English"),
+]),
             Book(name: "Hacking with watchOS", author: "Paul Hudson", image: "hacking_with_watchos", status: .wantToRead, description: """
 If you already read Hacking with Swift, Hacking with macOS, or Pro Swift, you'll already know exactly how Hacking with watchOS is structured: I've designed a collection of app projects that teach all the core system frameworks, including SwiftUI, then ordered them so you start to learn with easy projects and work your way up over time.
 Hacking with watchOS teaches you SwiftUI through real-world projects. There's a comprehensive Swift introduction for beginners, but I'm also packing the book with hints and tips that help you transfer your existing iOS skills to watchOS painlessly.
@@ -109,7 +129,12 @@ Animation: Learn how to make your user interfaces come to life with attribute an
 iMove: Design your own custom workout app using HealthKit and track calories, distance, and more.
 ColorSpin: Add SpriteKit to your apps and build high-performance 2D games – it's easier than you think!
 WatchConnectivity: Transfer data, settings, files, and complication updates between watchOS and iOS.
-"""),
+""", details: [
+    BookDetail(attribute: "GENRE", valueText: nil, valueIcon: "star.fill", description: "Programming"),
+    BookDetail(attribute: "RELEASED", valueText: "2021", valueIcon: nil, description: "28 February"),
+    BookDetail(attribute: "LENGTH", valueText: "187", valueIcon: nil, description: "Pages"),
+    BookDetail(attribute: "LANGUAGE", valueText: nil, valueIcon: "globe.americas.fill", description: "English"),
+]),
             Book(name: "Learning Domain-Driven Design", author: "Vlad Khononov", image: "learning_domain_driven_design", status: .wantToRead, description: """
 Building software is harder than ever. As a developer, you not only have to chase ever-changing technological trends but also need to understand the business domains behind the software. This practical book provides you with a set of core patterns, principles, and practices for analyzing business domains, understanding business strategy, and, most importantly, aligning software design with its business needs.
 
@@ -123,7 +148,12 @@ Build a shared understanding of the business domains you encounter
 Decompose a system into bounded contexts
 Coordinate the work of multiple teams
 Gradually introduce DDD to brownfield projects
-"""),
+""", details: [
+    BookDetail(attribute: "GENRE", valueText: nil, valueIcon: "star.fill", description: "Programming"),
+    BookDetail(attribute: "RELEASED", valueText: "2021", valueIcon: nil, description: "8 October"),
+    BookDetail(attribute: "LENGTH", valueText: "531", valueIcon: nil, description: "Pages"),
+    BookDetail(attribute: "LANGUAGE", valueText: nil, valueIcon: "globe.americas.fill", description: "English"),
+]),
             Book(name: "Clean Craftsmanship", author: "Robert C. Martin", image: "clean_craftsmanship", status: .wantToRead, description: """
 How to Write Code You're Proud of . . . Every Single Day
 ". . . [A] timely and humble reminder of the ever-increasing complexity of our programmatic world and how we owe it to the legacy of humankind--and to ourselves--to practice ethical development. Take your time reading Clean Craftsmanship. . . . Keep this book on your go-to bookshelf. Let this book be your old friend--your Uncle Bob, your guide--as you make your way through this world with curiosity and courage."
@@ -139,7 +169,12 @@ collaborative programming, and acceptance tests
 How developers and teams can promote productivity, quality, and courage
 The true meaning of integrity and teamwork among programmers, and ten specific commitments every software professional should make
 Register your book for convenient access to the book's companion videos, updates, and/or corrections as they become available. See inside book for details.
-"""),
+""", details: [
+    BookDetail(attribute: "GENRE", valueText: nil, valueIcon: "star.fill", description: "Programming"),
+    BookDetail(attribute: "RELEASED", valueText: "2021", valueIcon: nil, description: "16 September"),
+    BookDetail(attribute: "LENGTH", valueText: "416", valueIcon: nil, description: "Pages"),
+    BookDetail(attribute: "LANGUAGE", valueText: nil, valueIcon: "globe.americas.fill", description: "English"),
+]),
             Book(name: "Code That Fits in Your Head", author: "Mark Seemann", image: "code_that_fits_in_your_head", status: .wantToRead, description: """
 How to Reduce Code Complexity and Develop Software More Sustainably
 "Mark Seemann is well known for explaining complex concepts clearly and thoroughly. In this book he condenses his wide-ranging software development experience into a set of practical, pragmatic techniques for writing sustainable and human-friendly code. This book will be a must-read for every programmer."
@@ -157,7 +192,12 @@ Discover ways to solve code problems more quickly and effectively
 Think more productively about performance and security
 If you've ever suffered through bad projects or had to cope with unmaintainable legacy code, this guide will help you make things better next time and every time.
 Register your book for convenient access to downloads, updates, and/or corrections as they become available. See inside book for details.
-"""),
+""", details: [
+    BookDetail(attribute: "GENRE", valueText: nil, valueIcon: "star.fill", description: "Programming"),
+    BookDetail(attribute: "RELEASED", valueText: "2021", valueIcon: nil, description: "15 November"),
+    BookDetail(attribute: "LENGTH", valueText: "416", valueIcon: nil, description: "Pages"),
+    BookDetail(attribute: "LANGUAGE", valueText: nil, valueIcon: "globe.americas.fill", description: "English"),
+]),
             Book(name: "Difficult Conversations", author: "Bruce Patton, Douglas Stone, and others", image: "difficult_conversations", status: .wantToRead, description: """
 The 10th-anniversary edition of the New York Times business bestseller-now updated with "Answers to Ten Questions People Ask"
 We attempt or avoid difficult conversations every day-whether dealing with an underperforming employee, disagreeing with a spouse, or negotiating with a client. From the Harvard Negotiation Project, the organization that brought you Getting to Yes, Difficult Conversations provides a step-by-step approach to having those tough conversations with less stress and more success. you'll learn how to:
@@ -167,7 +207,12 @@ We attempt or avoid difficult conversations every day-whether dealing with an un
 · Listen for the meaning of what is not said
 · Stay balanced in the face of attacks and accusations
 · Move from emotion to productive problem solving
-"""),
+""", details: [
+    BookDetail(attribute: "GENRE", valueText: nil, valueIcon: "star.fill", description: "Leadership"),
+    BookDetail(attribute: "RELEASED", valueText: "2010", valueIcon: nil, description: "2 November"),
+    BookDetail(attribute: "LENGTH", valueText: "350", valueIcon: nil, description: "Pages"),
+    BookDetail(attribute: "LANGUAGE", valueText: nil, valueIcon: "globe.americas.fill", description: "English"),
+]),
         ])
     ]
     
