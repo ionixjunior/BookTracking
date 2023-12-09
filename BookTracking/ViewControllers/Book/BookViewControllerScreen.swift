@@ -15,6 +15,7 @@ class BookViewControllerScreen: UIView {
         tableView.separatorStyle = .none
         tableView.register(HeaderTableViewCell.self, forCellReuseIdentifier: HeaderTableViewCell.identifider)
         tableView.register(DescriptionTableViewCell.self, forCellReuseIdentifier: DescriptionTableViewCell.identifider)
+        tableView.register(DetailTableViewCell.self, forCellReuseIdentifier: DetailTableViewCell.identifier)
         return tableView
     }()
 
