@@ -43,13 +43,27 @@ extension BookViewController: UITableViewDelegate {
 }
 
 extension BookViewController: UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return viewModel?.numberOfSections ?? 0
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel?.numberOfRowsIn(section: section) ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: HeaderTableViewCell.identifider, for: indexPath) as? HeaderTableViewCell
-        cell?.setUp(book: book)
-        return cell ?? UITableViewCell()
+        if indexPath.section == Sections.header.rawValue {
+            let cell = tableView.dequeueReusableCell(withIdentifier: HeaderTableViewCell.identifider, for: indexPath) as? HeaderTableViewCell
+            cell?.setUp(book: book)
+            return cell ?? UITableViewCell()
+        }
+        
+        if indexPath.section == Sections.description.rawValue {
+            let cell = tableView.dequeueReusableCell(withIdentifier: DescriptionTableViewCell.identifider, for: indexPath) as? DescriptionTableViewCell
+            cell?.setUp(book: book)
+            return cell ?? UITableViewCell()
+        }
+        
+        return UITableViewCell()
     }
 }

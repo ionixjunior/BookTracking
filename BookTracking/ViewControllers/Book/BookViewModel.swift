@@ -7,6 +7,11 @@
 
 import UIKit
 
+enum Sections: Int, CaseIterable {
+    case header = 0
+    case description = 1
+}
+
 class BookViewModel {
     
     let book: Book
@@ -15,13 +20,29 @@ class BookViewModel {
         self.book = book
     }
     
+    var numberOfSections: Int {
+        return Sections.allCases.count
+    }
+    
     func numberOfRowsIn(section: Int) -> Int {
-        return 1
+        if section == Sections.header.rawValue {
+            return 1
+        }
+        
+        if section == Sections.description.rawValue {
+            return 1
+        }
+        
+        return 0
     }
     
     func getHeightBy(section: Int) -> CGFloat {
-        if section == 0 {
-            return 180
+        if section == Sections.header.rawValue {
+            return 210
+        }
+        
+        if section == Sections.description.rawValue {
+            return 150
         }
         
         return 0
