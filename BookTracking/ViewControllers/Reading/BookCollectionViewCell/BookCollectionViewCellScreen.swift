@@ -9,14 +9,7 @@ import UIKit
 
 class BookCollectionViewCellScreen: UIView {
     private lazy var bookImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.contentMode = .scaleAspectFill
-        imageView.clipsToBounds = true
-        imageView.layer.cornerRadius = 8
-        imageView.layer.borderColor = UIColor.systemGray5.cgColor
-        imageView.layer.borderWidth = 1
-        return imageView
+        return BookCoverComponent(frame: .zero)
     }()
     
     override init(frame: CGRect) {
