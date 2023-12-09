@@ -121,8 +121,6 @@ class HeaderTableViewCellScreen: UIView {
             
             moreButton.bottomAnchor.constraint(equalTo: bookImageView.bottomAnchor),
             moreButton.trailingAnchor.constraint(equalTo: nameLabel.trailingAnchor),
-//            moreButton.widthAnchor.constraint(equalToConstant: 40),
-//            moreButton.heightAnchor.constraint(equalToConstant: 40),
         ])
     }
     
