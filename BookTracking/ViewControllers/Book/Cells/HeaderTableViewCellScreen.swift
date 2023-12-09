@@ -26,9 +26,17 @@ class HeaderTableViewCellScreen: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont(name: UILabel.appearance().font.fontName, size: 18)
-        label.textColor = .systemGray4
+        label.textColor = .systemGray2
         label.numberOfLines = 0
         return label
+    }()
+    
+    private lazy var authorIcon: UIImageView = {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.image = UIImage(systemName: "chevron.right")
+        imageView.tintColor = .systemGray5
+        return imageView
     }()
     
     private lazy var statusView: UIView = {
@@ -76,6 +84,7 @@ class HeaderTableViewCellScreen: UIView {
         addSubview(bookImageView)
         addSubview(nameLabel)
         addSubview(authorLabel)
+        addSubview(authorIcon)
         addSubview(statusView)
         statusView.addSubview(statusIcon)
         statusView.addSubview(statusLabel)
@@ -101,7 +110,10 @@ class HeaderTableViewCellScreen: UIView {
             
             authorLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 4),
             authorLabel.leadingAnchor.constraint(equalTo: nameLabel.leadingAnchor),
-            authorLabel.trailingAnchor.constraint(equalTo: nameLabel.trailingAnchor),
+            
+            authorIcon.topAnchor.constraint(equalTo: authorLabel.topAnchor),
+            authorIcon.leadingAnchor.constraint(equalTo: authorLabel.trailingAnchor, constant: 2),
+            authorIcon.trailingAnchor.constraint(lessThanOrEqualTo: nameLabel.trailingAnchor, constant: 0),
             
             statusView.topAnchor.constraint(equalTo: authorLabel.bottomAnchor, constant: 10),
             statusView.leadingAnchor.constraint(equalTo: nameLabel.leadingAnchor),
