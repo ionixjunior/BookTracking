@@ -9,7 +9,7 @@ import UIKit
 
 class DescriptionTableViewCell: UITableViewCell {
     
-    static let identifider: String = String(describing: DescriptionTableViewCell.self)
+    static let identifier: String = String(describing: DescriptionTableViewCell.self)
     
     var screen: DescriptionTableViewCellScreen = DescriptionTableViewCellScreen()
 

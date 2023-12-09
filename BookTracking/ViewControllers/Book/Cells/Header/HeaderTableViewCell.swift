@@ -9,7 +9,7 @@ import UIKit
 
 class HeaderTableViewCell: UITableViewCell {
     
-    static let identifider: String = String(describing: HeaderTableViewCell.self)
+    static let identifier: String = String(describing: HeaderTableViewCell.self)
     
     var screen: HeaderTableViewCellScreen = HeaderTableViewCellScreen()
     

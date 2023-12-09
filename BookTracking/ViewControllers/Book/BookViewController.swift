@@ -53,13 +53,13 @@ extension BookViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == Sections.header.rawValue {
-            let cell = tableView.dequeueReusableCell(withIdentifier: HeaderTableViewCell.identifider, for: indexPath) as? HeaderTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: HeaderTableViewCell.identifier, for: indexPath) as? HeaderTableViewCell
             cell?.setUp(book: book)
             return cell ?? UITableViewCell()
         }
         
         if indexPath.section == Sections.description.rawValue {
-            let cell = tableView.dequeueReusableCell(withIdentifier: DescriptionTableViewCell.identifider, for: indexPath) as? DescriptionTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: DescriptionTableViewCell.identifier, for: indexPath) as? DescriptionTableViewCell
             cell?.setUp(book: book)
             return cell ?? UITableViewCell()
         }
