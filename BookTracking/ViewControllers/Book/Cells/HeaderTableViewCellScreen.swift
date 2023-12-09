@@ -61,6 +61,13 @@ class HeaderTableViewCellScreen: UIView {
         return imageView
     }()
     
+    private lazy var moreButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setImage(UIImage(systemName: "ellipsis.circle.fill")?.scalePreservingAspectRatio(targetSize: CGSize(width: 30, height: 30)), for: .normal)
+        return button
+    }()
+    
     func configScreen(superView: UIView) {
         translatesAutoresizingMaskIntoConstraints = false
         addViews(superView)
@@ -75,6 +82,7 @@ class HeaderTableViewCellScreen: UIView {
         addSubview(statusView)
         statusView.addSubview(statusIcon)
         statusView.addSubview(statusLabel)
+        addSubview(moreButton)
     }
     
     private func configConstraints(_ superView: UIView) {
@@ -110,6 +118,11 @@ class HeaderTableViewCellScreen: UIView {
             statusLabel.bottomAnchor.constraint(equalTo: statusView.bottomAnchor, constant: -6),
             statusLabel.leadingAnchor.constraint(equalTo: statusIcon.trailingAnchor, constant: 4),
             statusLabel.trailingAnchor.constraint(equalTo: statusView.trailingAnchor, constant: -6),
+            
+            moreButton.bottomAnchor.constraint(equalTo: bookImageView.bottomAnchor),
+            moreButton.trailingAnchor.constraint(equalTo: nameLabel.trailingAnchor),
+//            moreButton.widthAnchor.constraint(equalToConstant: 40),
+//            moreButton.heightAnchor.constraint(equalToConstant: 40),
         ])
     }
     
@@ -131,3 +144,4 @@ class HeaderTableViewCellScreen: UIView {
         }
     }
 }
+
