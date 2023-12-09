@@ -47,12 +47,12 @@ class DescriptionTableViewCellScreen: UIView {
     
     private func configConstraints(_ superView: UIView) {
         NSLayoutConstraint.activate([
-            topAnchor.constraint(equalTo: superView.topAnchor),
-            bottomAnchor.constraint(equalTo: superView.bottomAnchor),
+            topAnchor.constraint(equalTo: superView.topAnchor, constant: 20),
+            bottomAnchor.constraint(equalTo: superView.bottomAnchor, constant: -20),
             leadingAnchor.constraint(equalTo: superView.leadingAnchor, constant: 20),
             trailingAnchor.constraint(equalTo: superView.trailingAnchor, constant: -20),
             
-            descriptionLabel.topAnchor.constraint(equalTo: topAnchor, constant: 20),
+            descriptionLabel.topAnchor.constraint(equalTo: topAnchor),
             descriptionLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
             descriptionLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
             

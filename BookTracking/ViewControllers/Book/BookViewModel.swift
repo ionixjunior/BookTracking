@@ -38,11 +38,11 @@ class BookViewModel {
     
     func getHeightBy(section: Int) -> CGFloat {
         if section == Sections.header.rawValue {
-            return 210
+            return 211
         }
         
         if section == Sections.description.rawValue {
-            return 150
+            return 148
         }
         
         return 0
