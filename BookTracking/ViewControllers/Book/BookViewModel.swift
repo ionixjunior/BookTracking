@@ -69,4 +69,8 @@ class BookViewModel {
     func getHighlightBy(indexPath: IndexPath) -> BookHighlight {
         return book.highlights[indexPath.item]
     }
+    
+    var hasNoHighlights: Bool {
+        return book.highlights.isEmpty
+    }
 }

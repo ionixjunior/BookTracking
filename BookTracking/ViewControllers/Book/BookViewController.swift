@@ -39,16 +39,20 @@ extension BookViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        guard let viewModel = viewModel else { return nil }
+        
         if section == Sections.highlight.rawValue {
-            return HighlightHeaderView()
+            return viewModel.hasNoHighlights ? nil : HighlightHeaderView()
         }
         
         return nil
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        guard let viewModel = viewModel else { return 0 }
+        
         if section == Sections.highlight.rawValue {
-            return 30
+            return viewModel.hasNoHighlights ? 0 : 30
         }
         
         return 0
