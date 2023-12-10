@@ -121,9 +121,9 @@
 		7A33C1262B25F69500A52028 /* Highlight */ = {
 			isa = PBXGroup;
 			children = (
+				7A33C12B2B25F7B300A52028 /* HighlightViewModel.swift */,
 				7A33C1272B25F6FC00A52028 /* HighlightTableViewCell.swift */,
 				7A33C1292B25F71300A52028 /* HighlightTableViewCellScreen.swift */,
-				7A33C12B2B25F7B300A52028 /* HighlightViewModel.swift */,
 			);
 			path = Highlight;
 			sourceTree = "<group>";
