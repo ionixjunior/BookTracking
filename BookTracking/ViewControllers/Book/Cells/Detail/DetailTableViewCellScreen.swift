@@ -25,6 +25,10 @@ class DetailTableViewCellScreen: UIView {
         return cv
     }()
     
+    private lazy var separatorView: UIView = {
+        return SeparatorViewComponent(frame: .zero)
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
@@ -42,6 +46,7 @@ class DetailTableViewCellScreen: UIView {
         translatesAutoresizingMaskIntoConstraints = false
         superView.addSubview(self)
         addSubview(collectionView)
+        addSubview(separatorView)
     }
     
     private func configConstraints(_ superView: UIView) {
@@ -55,6 +60,11 @@ class DetailTableViewCellScreen: UIView {
             collectionView.leadingAnchor.constraint(equalTo: leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
             collectionView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            
+            separatorView.topAnchor.constraint(equalTo: collectionView.bottomAnchor, constant: 20),
+            separatorView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            separatorView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            separatorView.heightAnchor.constraint(equalToConstant: 1),
         ])
     }
     
