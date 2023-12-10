@@ -65,8 +65,8 @@ class DetailTableViewCellScreen: UIView {
         
         separatorView.snp.makeConstraints { make in
             make.top.equalTo(collectionView.snp.bottom).offset(20)
-            make.leading.equalToSuperview()
-            make.trailing.equalToSuperview()
+            make.leading.equalToSuperview().offset(20)
+            make.trailing.equalToSuperview().inset(20)
             make.height.equalTo(1)
         }
     }
