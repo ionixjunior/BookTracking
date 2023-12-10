@@ -6,5 +6,6 @@ target 'BookTracking' do
   use_frameworks!
 
   # Pods for BookTracking
-
+  pod 'SnapKit', '~> 5.6.0'
+  
 end
