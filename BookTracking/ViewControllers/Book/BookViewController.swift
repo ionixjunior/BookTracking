@@ -56,19 +56,19 @@ extension BookViewController: UITableViewDataSource {
         
         if indexPath.section == Sections.header.rawValue {
             let cell = tableView.dequeueReusableCell(withIdentifier: HeaderTableViewCell.identifier, for: indexPath) as? HeaderTableViewCell
-            cell?.setUp(book: book)
+            cell?.setUp(book: viewModel.book)
             return cell ?? UITableViewCell()
         }
         
         if indexPath.section == Sections.description.rawValue {
             let cell = tableView.dequeueReusableCell(withIdentifier: DescriptionTableViewCell.identifier, for: indexPath) as? DescriptionTableViewCell
-            cell?.setUp(book: book)
+            cell?.setUp(book: viewModel.book)
             return cell ?? UITableViewCell()
         }
         
         if indexPath.section == Sections.detail.rawValue {
             let cell = tableView.dequeueReusableCell(withIdentifier: DetailTableViewCell.identifier, for: indexPath) as? DetailTableViewCell
-            cell?.setUp(details: book.details)
+            cell?.setUp(details: viewModel.book.details)
             return cell ?? UITableViewCell()
         }
         
