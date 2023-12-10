@@ -6,4 +6,4 @@ At the moment, only the reading screen was created. This project is still under 
 
 I wrote in a blog post my first impressions about developing this app clone using View Code https://ionixjunior.dev/en/book-tracking-app-clone-using-view-code-in-swift/ 
 
-<img src="art/reading.png" width="250" alt="Reading screen" />
+<img src="art/book_tracking.gif" width="250" alt="Gif of Book Tracking app clone" />
