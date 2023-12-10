@@ -21,4 +21,9 @@ class DetailViewModel {
     func getItemBy(indexPath: IndexPath) -> BookDetail {
         return details[indexPath.item]
     }
+    
+    func isDetailText(indexPath: IndexPath) -> Bool {
+        guard let text = details[indexPath.item].valueText else { return false }
+        return !text.isEmpty
+    }
 }

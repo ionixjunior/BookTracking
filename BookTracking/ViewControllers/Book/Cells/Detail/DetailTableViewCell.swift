@@ -42,7 +42,13 @@ extension DetailTableViewCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let viewModel = viewModel else { return UICollectionViewCell() }
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DetailTextCollectionViewCell.identifier, for: indexPath) as? DetailTextCollectionViewCell
+        if viewModel.isDetailText(indexPath: indexPath) {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DetailTextCollectionViewCell.identifier, for: indexPath) as? DetailTextCollectionViewCell
+            cell?.setUp(detail: viewModel.getItemBy(indexPath: indexPath))
+            return cell ?? UICollectionViewCell()
+        }
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DetailIconCollectionViewCell.identifier, for: indexPath) as? DetailIconCollectionViewCell
         cell?.setUp(detail: viewModel.getItemBy(indexPath: indexPath))
         return cell ?? UICollectionViewCell()
     }

@@ -20,6 +20,7 @@ class DetailTableViewCellScreen: UIView {
         cv.translatesAutoresizingMaskIntoConstraints = false
         cv.showsHorizontalScrollIndicator = false
         cv.register(DetailTextCollectionViewCell.self, forCellWithReuseIdentifier: DetailTextCollectionViewCell.identifier)
+        cv.register(DetailIconCollectionViewCell.self, forCellWithReuseIdentifier: DetailIconCollectionViewCell.identifier)
         
         return cv
     }()
