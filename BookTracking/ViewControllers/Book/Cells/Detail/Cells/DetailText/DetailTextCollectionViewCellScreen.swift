@@ -22,6 +22,7 @@ class DetailTextCollectionViewCellScreen: UIView {
     private lazy var attributeLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont.systemFont(ofSize: 13, weight: .bold)
         label.textColor = .systemGray2
         return label
     }()
@@ -37,6 +38,7 @@ class DetailTextCollectionViewCellScreen: UIView {
     private lazy var descriptionLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont.systemFont(ofSize: 13, weight: .semibold)
         label.textColor = .systemGray2
         return label
     }()
