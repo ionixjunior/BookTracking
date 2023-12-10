@@ -37,6 +37,22 @@ extension BookViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return viewModel?.getHeightBy(section: indexPath.section) ?? 0
     }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        if section == Sections.highlight.rawValue {
+            return HighlightHeaderView()
+        }
+        
+        return nil
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if section == Sections.highlight.rawValue {
+            return 30
+        }
+        
+        return 0
+    }
 }
 
 extension BookViewController: UITableViewDataSource {
