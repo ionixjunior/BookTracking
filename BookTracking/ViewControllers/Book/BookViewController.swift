@@ -64,6 +64,12 @@ extension BookViewController: UITableViewDataSource {
             return cell ?? UITableViewCell()
         }
         
+        if indexPath.section == Sections.detail.rawValue {
+            let cell = tableView.dequeueReusableCell(withIdentifier: DetailTableViewCell.identifier, for: indexPath) as? DetailTableViewCell
+            cell?.setUp(details: book.details)
+            return cell ?? UITableViewCell()
+        }
+        
         return UITableViewCell()
     }
 }

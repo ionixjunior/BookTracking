@@ -12,6 +12,10 @@ class DetailTextCollectionViewCellScreen: UIView {
     private lazy var stackView: UIStackView = {
         let sv = UIStackView()
         sv.translatesAutoresizingMaskIntoConstraints = false
+        sv.alignment = .center
+        sv.distribution = .equalCentering
+        sv.axis = .vertical
+        sv.spacing = 0
         return sv
     }()
     
@@ -25,6 +29,7 @@ class DetailTextCollectionViewCellScreen: UIView {
     private lazy var valueLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont(name: UILabel.appearance().font.fontName, size: 24)
         label.textColor = .black
         return label
     }()
@@ -50,25 +55,32 @@ class DetailTextCollectionViewCellScreen: UIView {
     }
     
     private func addViews(_ superView: UIView) {
+        translatesAutoresizingMaskIntoConstraints = false
         superView.addSubview(self)
         addSubview(stackView)
-        stackView.addSubview(attributeLabel)
-        stackView.addSubview(valueLabel)
-        stackView.addSubview(descriptionLabel)
+        stackView.addArrangedSubview(attributeLabel)
+        stackView.addArrangedSubview(valueLabel)
+        stackView.addArrangedSubview(descriptionLabel)
     }
     
     private func configConstraints(_ superView: UIView) {
         NSLayoutConstraint.activate([
-            topAnchor.constraint(equalTo: superView.topAnchor),
-            leadingAnchor.constraint(equalTo: superView.leadingAnchor),
-            trailingAnchor.constraint(equalTo: superView.trailingAnchor),
-            bottomAnchor.constraint(equalTo: superView.bottomAnchor),
+            topAnchor.constraint(equalTo: superView.topAnchor, constant: 20),
+            bottomAnchor.constraint(equalTo: superView.bottomAnchor, constant: -20),
+            leadingAnchor.constraint(equalTo: superView.leadingAnchor, constant: 20),
+            trailingAnchor.constraint(equalTo: superView.trailingAnchor, constant: -20),
             
             stackView.topAnchor.constraint(equalTo: topAnchor),
             stackView.leadingAnchor.constraint(equalTo: leadingAnchor),
             stackView.trailingAnchor.constraint(equalTo: trailingAnchor),
             stackView.bottomAnchor.constraint(equalTo: bottomAnchor),
         ])
+    }
+    
+    func setUp(detail: BookDetail) {
+        attributeLabel.text = detail.attribute
+        valueLabel.text = detail.valueText
+        descriptionLabel.text = detail.description
     }
     
 }

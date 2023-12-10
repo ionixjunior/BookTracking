@@ -11,9 +11,9 @@ class DetailTableViewCellScreen: UIView {
     
     private lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .vertical
-        layout.itemSize = CGSize(width: 80, height: 160)
-        layout.minimumLineSpacing = 20
+        layout.scrollDirection = .horizontal
+        layout.itemSize = CGSize(width: 120, height: 108)
+        layout.minimumLineSpacing = 10
         layout.sectionInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
         
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -33,12 +33,13 @@ class DetailTableViewCellScreen: UIView {
     }
     
     func configScreen(superView: UIView) {
-        superView.addSubview(self)
         addViews(superView)
         configConstraints(superView)
     }
     
     private func addViews(_ superView: UIView) {
+        translatesAutoresizingMaskIntoConstraints = false
+        superView.addSubview(self)
         addSubview(collectionView)
     }
     
@@ -56,4 +57,8 @@ class DetailTableViewCellScreen: UIView {
         ])
     }
     
+    func configDelegates(delegate: UICollectionViewDelegate, dataSource: UICollectionViewDataSource) {
+        collectionView.delegate = delegate
+        collectionView.dataSource = dataSource
+    }
 }

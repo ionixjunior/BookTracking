@@ -22,4 +22,8 @@ class DetailTextCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func setUp(detail: BookDetail) {
+        screen.setUp(detail: detail)
+    }
+    
 }

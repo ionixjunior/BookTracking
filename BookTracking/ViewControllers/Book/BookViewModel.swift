@@ -51,7 +51,7 @@ class BookViewModel {
         }
         
         if section == Sections.detail.rawValue {
-            return 148
+            return 128
         }
         
         return 0
