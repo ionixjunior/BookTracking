@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class BookSectionTableViewCellScreen: UIView {
     
@@ -17,7 +18,6 @@ class BookSectionTableViewCellScreen: UIView {
         layout.sectionInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
         
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        cv.translatesAutoresizingMaskIntoConstraints = false
         cv.showsHorizontalScrollIndicator = false
         cv.register(BookCollectionViewCell.self, forCellWithReuseIdentifier: BookCollectionViewCell.identifier)
         
@@ -34,20 +34,20 @@ class BookSectionTableViewCellScreen: UIView {
     
     func configScreen(view: UIView) {
         addViews(view)
-        configConstraints(view)
+        configConstraints()
     }
     
     private func addViews(_ view: UIView) {
         view.addSubview(collectionView)
     }
     
-    private func configConstraints(_ view: UIView) {
-        NSLayoutConstraint.activate([
-            collectionView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0),
-            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
-            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
-            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0),
-        ])
+    private func configConstraints() {
+        collectionView.snp.makeConstraints { make in
+            make.top.equalToSuperview()
+            make.leading.equalToSuperview()
+            make.trailing.equalToSuperview()
+            make.bottom.equalToSuperview()
+        }
     }
     
     func configDelegates(delegate: UICollectionViewDelegate, dataSource: UICollectionViewDataSource) {

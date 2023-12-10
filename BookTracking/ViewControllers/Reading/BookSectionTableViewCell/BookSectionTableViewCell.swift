@@ -7,12 +7,18 @@
 
 import UIKit
 
+protocol BookSectionTableViewCellProtocol: AnyObject {
+    func bookTapped(book: Book)
+}
+
 class BookSectionTableViewCell: UITableViewCell {
     
     static let identifier: String = String(describing: BookSectionTableViewCell.self)
     
     var bookSectionScreen: BookSectionTableViewCellScreen?
     var viewModel: BookSectionViewModel?
+    
+    weak var delegate: BookSectionTableViewCellProtocol?
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -36,7 +42,12 @@ class BookSectionTableViewCell: UITableViewCell {
 }
 
 extension BookSectionTableViewCell: UICollectionViewDelegate {
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let viewModel = viewModel else { return }
+        
+        let book = viewModel.getBookBy(indexPath: indexPath)
+        delegate?.bookTapped(book: book)
+    }
 }
 
 extension BookSectionTableViewCell: UICollectionViewDataSource {

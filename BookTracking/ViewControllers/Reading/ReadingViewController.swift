@@ -76,6 +76,7 @@ extension ReadingViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: BookSectionTableViewCell.identifier) as? BookSectionTableViewCell
         cell?.setUp(books: viewModel.getBooksBy(section: indexPath.section))
+        cell?.delegate = self
         return cell ?? UITableViewCell()
     }
 }
@@ -85,7 +86,12 @@ extension ReadingViewController: UISearchResultsUpdating {
         guard let text = searchController.searchBar.text else { return }
         print(text)
     }
-    
-    
+}
+
+extension ReadingViewController: BookSectionTableViewCellProtocol {
+    func bookTapped(book: Book) {
+        let viewController = BookViewController(book: book)
+        navigationController?.pushViewController(viewController, animated: true)
+    }
 }
 

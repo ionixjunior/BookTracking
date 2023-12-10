@@ -6,17 +6,11 @@
 //
 
 import UIKit
+import SnapKit
 
 class BookCollectionViewCellScreen: UIView {
     private lazy var bookImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.contentMode = .scaleAspectFill
-        imageView.clipsToBounds = true
-        imageView.layer.cornerRadius = 8
-        imageView.layer.borderColor = UIColor.systemGray5.cgColor
-        imageView.layer.borderWidth = 1
-        return imageView
+        return BookCoverComponent(frame: .zero)
     }()
     
     override init(frame: CGRect) {
@@ -29,20 +23,20 @@ class BookCollectionViewCellScreen: UIView {
     
     func configScreen(view: UIView) {
         addViews(view)
-        configConstraints(view)
+        configConstraints()
     }
     
     private func addViews(_ view: UIView) {
         view.addSubview(bookImageView)
     }
     
-    private func configConstraints(_ view: UIView) {
-        NSLayoutConstraint.activate([
-            bookImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            bookImageView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            bookImageView.widthAnchor.constraint(equalTo: view.widthAnchor),
-            bookImageView.heightAnchor.constraint(equalTo: view.heightAnchor),
-        ])
+    private func configConstraints() {
+        bookImageView.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.centerY.equalToSuperview()
+            make.width.equalToSuperview()
+            make.height.equalToSuperview()
+        }
     }
     
     func setUp(book: Book) {

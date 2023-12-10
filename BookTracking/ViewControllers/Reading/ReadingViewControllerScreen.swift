@@ -6,12 +6,12 @@
 //
 
 import UIKit
+import SnapKit
 
 class ReadingViewControllerScreen: UIView {
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
-        tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.separatorStyle = .none
         tableView.register(BookSectionTableViewCell.self, forCellReuseIdentifier: BookSectionTableViewCell.identifier)
         return tableView
@@ -33,12 +33,12 @@ class ReadingViewControllerScreen: UIView {
     }
     
     private func configConstraints() {
-        NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 0),
-            tableView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 0),
-            tableView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: 0),
-            tableView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: 0),
-        ])
+        tableView.snp.makeConstraints { make in
+            make.top.equalTo(safeAreaLayoutGuide.snp.top)
+            make.leading.equalTo(safeAreaLayoutGuide.snp.leading)
+            make.trailing.equalTo(safeAreaLayoutGuide.snp.trailing)
+            make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom)
+        }
     }
     
     func configDelegates(delegate: UITableViewDelegate, dataSource: UITableViewDataSource) {
