@@ -15,6 +15,7 @@ class BookViewControllerScreen: UIView {
         tableView.separatorStyle = .none
         tableView.estimatedSectionHeaderHeight = 0
         tableView.sectionHeaderHeight = UITableView.automaticDimension
+        tableView.allowsSelection = false
         tableView.register(HeaderTableViewCell.self, forCellReuseIdentifier: HeaderTableViewCell.identifier)
         tableView.register(DescriptionTableViewCell.self, forCellReuseIdentifier: DescriptionTableViewCell.identifier)
         tableView.register(DetailTableViewCell.self, forCellReuseIdentifier: DetailTableViewCell.identifier)
