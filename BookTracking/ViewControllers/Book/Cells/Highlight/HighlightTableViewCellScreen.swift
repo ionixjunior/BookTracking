@@ -12,13 +12,15 @@ class HighlightTableViewCellScreen: UIView {
 
     private lazy var pageLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 16)
+        label.font = UIFont.systemFont(ofSize: 14, weight: .bold)
+        label.textColor = .systemGray2
         return label
     }()
     
     private lazy var quoteLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 24)
+        label.numberOfLines = 0
         return label
     }()
     
@@ -43,25 +45,44 @@ class HighlightTableViewCellScreen: UIView {
     
     private func configConstraints() {
         snp.makeConstraints { make in
-            make.top.equalToSuperview()
-            make.leading.equalToSuperview()
-            make.trailing.equalToSuperview()
-            make.bottom.equalToSuperview()
+            make.top.equalToSuperview().offset(20)
+            make.leading.equalToSuperview().offset(20)
+            make.trailing.equalToSuperview().inset(20)
+            make.bottom.equalToSuperview().inset(20)
         }
         
         pageLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(4)
+            make.top.equalToSuperview()
             make.leading.equalToSuperview()
             make.trailing.equalToSuperview()
-            make.bottom.equalToSuperview().inset(4)
         }
         
         quoteLabel.snp.makeConstraints { make in
-            make.top.equalTo(pageLabel.snp.bottom).offset(4)
+            make.top.equalTo(pageLabel.snp.bottom).offset(8)
             make.leading.equalTo(pageLabel.snp.leading)
             make.trailing.equalTo(pageLabel.snp.trailing)
             make.bottom.equalToSuperview()
         }
     }
     
+    func setUp(highlight: BookHighlight) {
+        pageLabel.text = "PAGE \(highlight.page)"
+        
+        let quote = "“ \(highlight.quote) ”"
+        let attributedString = NSMutableAttributedString(string: quote)
+        
+        let textAttribute: [NSAttributedString.Key: Any] = [
+            .font: UIFont.systemFont(ofSize: 24),
+            .backgroundColor: UIColor.accent.withAlphaComponent(0.3)
+        ]
+        let quoteMarkAttribute: [NSAttributedString.Key: Any] = [
+            .font: UIFont.systemFont(ofSize: 30)
+        ]
+        
+        attributedString.addAttributes(textAttribute, range: NSRange(location: 2, length: quote.count - 3))
+        attributedString.addAttributes(quoteMarkAttribute, range: NSRange(location: 0, length: 1))
+        attributedString.addAttributes(quoteMarkAttribute, range: NSRange(location: quote.count - 1, length: 1))
+        
+        quoteLabel.attributedText = attributedString
+    }
 }

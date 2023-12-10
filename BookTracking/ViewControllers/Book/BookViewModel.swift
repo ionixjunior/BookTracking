@@ -11,6 +11,7 @@ enum Sections: Int, CaseIterable {
     case header = 0
     case description = 1
     case detail = 2
+    case highlight = 3
 }
 
 class BookViewModel {
@@ -38,6 +39,10 @@ class BookViewModel {
             return 1
         }
         
+        if section == Sections.highlight.rawValue {
+            return book.highlights.count
+        }
+        
         return 0
     }
     
@@ -54,7 +59,14 @@ class BookViewModel {
             return 128
         }
         
+        if section == Sections.highlight.rawValue {
+            return UITableView.automaticDimension
+        }
+        
         return 0
     }
     
+    func getHighlightBy(indexPath: IndexPath) -> BookHighlight {
+        return book.highlights[indexPath.item]
+    }
 }

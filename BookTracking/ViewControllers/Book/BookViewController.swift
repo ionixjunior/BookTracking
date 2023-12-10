@@ -52,6 +52,8 @@ extension BookViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let viewModel = viewModel else { return UITableViewCell() }
+        
         if indexPath.section == Sections.header.rawValue {
             let cell = tableView.dequeueReusableCell(withIdentifier: HeaderTableViewCell.identifier, for: indexPath) as? HeaderTableViewCell
             cell?.setUp(book: book)
@@ -67,6 +69,12 @@ extension BookViewController: UITableViewDataSource {
         if indexPath.section == Sections.detail.rawValue {
             let cell = tableView.dequeueReusableCell(withIdentifier: DetailTableViewCell.identifier, for: indexPath) as? DetailTableViewCell
             cell?.setUp(details: book.details)
+            return cell ?? UITableViewCell()
+        }
+        
+        if indexPath.section == Sections.highlight.rawValue {
+            let cell = tableView.dequeueReusableCell(withIdentifier: HighlightTableViewCell.identifier, for: indexPath) as? HighlightTableViewCell
+            cell?.setUp(highlight: viewModel.getHighlightBy(indexPath: indexPath))
             return cell ?? UITableViewCell()
         }
         
