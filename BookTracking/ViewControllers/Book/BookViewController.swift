@@ -12,11 +12,9 @@ class BookViewController: UIViewController {
     private var screen: BookViewControllerScreen?
     private var viewModel: BookViewModel?
     
-    private var book: Book
-    
     init(book: Book) {
-        self.book = book
         super.init(nibName: nil, bundle: nil)
+        viewModel = BookViewModel(book: book)
     }
     
     required init?(coder: NSCoder) {
@@ -24,7 +22,6 @@ class BookViewController: UIViewController {
     }
     
     override func loadView() {
-        viewModel = BookViewModel(book: book)
         screen = BookViewControllerScreen()
         screen?.configDelegates(delegate: self, dataSource: self)
         view = screen
