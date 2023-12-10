@@ -48,8 +48,8 @@ class DetailTableViewCellScreen: UIView {
         NSLayoutConstraint.activate([
             topAnchor.constraint(equalTo: superView.topAnchor, constant: 20),
             bottomAnchor.constraint(equalTo: superView.bottomAnchor, constant: -20),
-            leadingAnchor.constraint(equalTo: superView.leadingAnchor, constant: 20),
-            trailingAnchor.constraint(equalTo: superView.trailingAnchor, constant: -20),
+            leadingAnchor.constraint(equalTo: superView.leadingAnchor),
+            trailingAnchor.constraint(equalTo: superView.trailingAnchor),
             
             collectionView.topAnchor.constraint(equalTo: topAnchor),
             collectionView.leadingAnchor.constraint(equalTo: leadingAnchor),
