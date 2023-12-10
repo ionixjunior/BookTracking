@@ -11,6 +11,7 @@ class HighlightTableViewCell: UITableViewCell {
 
     static let identifier: String = String(describing: HighlightTableViewCell.self)
     private let screen: HighlightTableViewCellScreen = HighlightTableViewCellScreen()
+    private var viewModel: HighlightViewModel?
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -21,4 +22,7 @@ class HighlightTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func setUp(highlights: [BookHighlight]) {
+        viewModel = HighlightViewModel(highlights: highlights)
+    }
 }
