@@ -350,7 +350,6 @@
 				2BEBBBF810333C8ADAFA9B4D /* Pods-BookTracking.debug.xcconfig */,
 				FBAF8C621F44FBE9353A75B9 /* Pods-BookTracking.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -650,6 +649,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BookTracking/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Book Tracking";
@@ -678,6 +678,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BookTracking/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Book Tracking";
