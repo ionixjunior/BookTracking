@@ -6,12 +6,12 @@
 //
 
 import UIKit
+import SnapKit
 
 class DetailIconCollectionViewCellScreen: UIView {
 
     private lazy var stackView: UIStackView = {
         let sv = UIStackView()
-        sv.translatesAutoresizingMaskIntoConstraints = false
         sv.alignment = .center
         sv.distribution = .equalCentering
         sv.axis = .vertical
@@ -21,7 +21,6 @@ class DetailIconCollectionViewCellScreen: UIView {
     
     private lazy var attributeLabel: UILabel = {
         let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 13, weight: .bold)
         label.textColor = .systemGray2
         return label
@@ -29,14 +28,12 @@ class DetailIconCollectionViewCellScreen: UIView {
     
     private lazy var valueIcon: UIImageView = {
         let imageView = UIImageView()
-        imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.tintColor = .black
         return imageView
     }()
     
     private lazy var descriptionLabel: UILabel = {
         let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 13, weight: .semibold)
         label.textColor = .systemGray2
         return label
@@ -52,11 +49,10 @@ class DetailIconCollectionViewCellScreen: UIView {
     
     func configScreen(superView: UIView) {
         addViews(superView)
-        configConstraints(superView)
+        configConstraints()
     }
     
     private func addViews(_ superView: UIView) {
-        translatesAutoresizingMaskIntoConstraints = false
         superView.addSubview(self)
         addSubview(stackView)
         stackView.addArrangedSubview(attributeLabel)
@@ -64,18 +60,20 @@ class DetailIconCollectionViewCellScreen: UIView {
         stackView.addArrangedSubview(descriptionLabel)
     }
     
-    private func configConstraints(_ superView: UIView) {
-        NSLayoutConstraint.activate([
-            topAnchor.constraint(equalTo: superView.topAnchor, constant: 20),
-            bottomAnchor.constraint(equalTo: superView.bottomAnchor, constant: -20),
-            leadingAnchor.constraint(equalTo: superView.leadingAnchor, constant: 20),
-            trailingAnchor.constraint(equalTo: superView.trailingAnchor, constant: -20),
-            
-            stackView.topAnchor.constraint(equalTo: topAnchor),
-            stackView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            stackView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            stackView.bottomAnchor.constraint(equalTo: bottomAnchor),
-        ])
+    private func configConstraints() {
+        snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(20)
+            make.leading.equalToSuperview().offset(20)
+            make.trailing.equalToSuperview().inset(20)
+            make.bottom.equalToSuperview().inset(20)
+        }
+        
+        stackView.snp.makeConstraints { make in
+            make.top.equalToSuperview()
+            make.leading.equalToSuperview()
+            make.trailing.equalToSuperview()
+            make.bottom.equalToSuperview()
+        }
     }
     
     func setUp(detail: BookDetail) {

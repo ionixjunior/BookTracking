@@ -6,12 +6,12 @@
 //
 
 import UIKit
+import SnapKit
 
 class BookHeaderView: UIView {
     
     private lazy var nameLabel: UILabel = {
         let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont(name: UILabel.appearance().font.fontName, size: 24)
         label.textColor = .black
         return label
@@ -32,11 +32,11 @@ class BookHeaderView: UIView {
     }
     
     private func configConstraints() {
-        NSLayoutConstraint.activate([
-            nameLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
-            nameLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            nameLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
-        ])
+        nameLabel.snp.makeConstraints { make in
+            make.centerY.equalToSuperview()
+            make.leading.equalToSuperview().offset(20)
+            make.trailing.equalToSuperview().inset(20)
+        }
     }
     
     func setName(name: String) {

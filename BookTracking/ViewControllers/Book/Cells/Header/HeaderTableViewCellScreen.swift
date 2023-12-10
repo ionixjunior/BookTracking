@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class HeaderTableViewCellScreen: UIView {
     
@@ -15,7 +16,6 @@ class HeaderTableViewCellScreen: UIView {
     
     private lazy var nameLabel: UILabel = {
         let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont(name: UILabel.appearance().font.fontName, size: 20)
         label.textColor = .black
         label.numberOfLines = 0
@@ -24,7 +24,6 @@ class HeaderTableViewCellScreen: UIView {
     
     private lazy var authorLabel: UILabel = {
         let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont(name: UILabel.appearance().font.fontName, size: 18)
         label.textColor = .systemGray2
         label.numberOfLines = 0
@@ -33,7 +32,6 @@ class HeaderTableViewCellScreen: UIView {
     
     private lazy var authorIcon: UIImageView = {
         let imageView = UIImageView()
-        imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.image = UIImage(systemName: "chevron.right")
         imageView.tintColor = .systemGray5
         return imageView
@@ -41,7 +39,6 @@ class HeaderTableViewCellScreen: UIView {
     
     private lazy var statusView: UIView = {
         let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = UIColor(named: "AccentColor")?.withAlphaComponent(0.2)
         view.layer.cornerRadius = 14
         view.clipsToBounds = true
@@ -50,7 +47,6 @@ class HeaderTableViewCellScreen: UIView {
     
     private lazy var statusLabel: UILabel = {
         let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = UIColor(named: "AccentColor")
         label.font = UIFont.boldSystemFont(ofSize: 14)
         return label
@@ -58,13 +54,11 @@ class HeaderTableViewCellScreen: UIView {
     
     private lazy var statusIcon: UIImageView = {
         let imageView = UIImageView()
-        imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
     
     private lazy var moreButton: UIButton = {
         let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(UIImage(systemName: "ellipsis.circle.fill")?.scalePreservingAspectRatio(targetSize: CGSize(width: 30, height: 30)), for: .normal)
         return button
     }()
@@ -74,9 +68,8 @@ class HeaderTableViewCellScreen: UIView {
     }()
     
     func configScreen(superView: UIView) {
-        translatesAutoresizingMaskIntoConstraints = false
         addViews(superView)
-        configConstraints(superView)
+        configConstraints()
     }
     
     private func addViews(_ superView: UIView) {
@@ -92,51 +85,69 @@ class HeaderTableViewCellScreen: UIView {
         addSubview(separatorView)
     }
     
-    private func configConstraints(_ superView: UIView) {
-        NSLayoutConstraint.activate([
-            topAnchor.constraint(equalTo: superView.topAnchor, constant: 0),
-            bottomAnchor.constraint(equalTo: superView.bottomAnchor, constant: -20),
-            leadingAnchor.constraint(equalTo: superView.leadingAnchor, constant: 20),
-            trailingAnchor.constraint(equalTo: superView.trailingAnchor, constant: -20),
-            
-            bookImageView.topAnchor.constraint(equalTo: topAnchor),
-            bookImageView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            bookImageView.widthAnchor.constraint(equalToConstant: 120),
-            bookImageView.heightAnchor.constraint(equalToConstant: 180),
-            
-            nameLabel.topAnchor.constraint(equalTo: topAnchor),
-            nameLabel.leadingAnchor.constraint(equalTo: bookImageView.trailingAnchor, constant: 20),
-            nameLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
-            
-            authorLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 4),
-            authorLabel.leadingAnchor.constraint(equalTo: nameLabel.leadingAnchor),
-            
-            authorIcon.topAnchor.constraint(equalTo: authorLabel.topAnchor),
-            authorIcon.leadingAnchor.constraint(equalTo: authorLabel.trailingAnchor, constant: 2),
-            authorIcon.trailingAnchor.constraint(lessThanOrEqualTo: nameLabel.trailingAnchor, constant: 0),
-            
-            statusView.topAnchor.constraint(equalTo: authorLabel.bottomAnchor, constant: 10),
-            statusView.leadingAnchor.constraint(equalTo: nameLabel.leadingAnchor),
-            statusView.widthAnchor.constraint(greaterThanOrEqualToConstant: 20),
-            statusView.heightAnchor.constraint(greaterThanOrEqualToConstant: 20),
-            
-            statusIcon.topAnchor.constraint(equalTo: statusView.topAnchor, constant: 6),
-            statusIcon.leadingAnchor.constraint(equalTo: statusView.leadingAnchor, constant: 6),
-            statusIcon.bottomAnchor.constraint(equalTo: statusView.bottomAnchor, constant: -6),
-            
-            statusLabel.topAnchor.constraint(equalTo: statusView.topAnchor, constant: 6),
-            statusLabel.bottomAnchor.constraint(equalTo: statusView.bottomAnchor, constant: -6),
-            statusLabel.leadingAnchor.constraint(equalTo: statusIcon.trailingAnchor, constant: 4),
-            statusLabel.trailingAnchor.constraint(equalTo: statusView.trailingAnchor, constant: -6),
-            
-            moreButton.bottomAnchor.constraint(equalTo: bookImageView.bottomAnchor),
-            moreButton.trailingAnchor.constraint(equalTo: nameLabel.trailingAnchor),
-            
-            separatorView.topAnchor.constraint(equalTo: bookImageView.bottomAnchor, constant: 30),
-            separatorView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            separatorView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            separatorView.heightAnchor.constraint(equalToConstant: 1),
-        ])
+    private func configConstraints() {
+        snp.makeConstraints { make in
+            make.top.equalToSuperview()
+            make.leading.equalToSuperview().offset(20)
+            make.trailing.equalToSuperview().inset(20)
+            make.bottom.equalToSuperview().inset(20)
+        }
+        
+        bookImageView.snp.makeConstraints { make in
+            make.top.equalToSuperview()
+            make.leading.equalToSuperview()
+            make.width.equalTo(120)
+            make.height.equalTo(180)
+        }
+        
+        nameLabel.snp.makeConstraints { make in
+            make.top.equalToSuperview()
+            make.leading.equalTo(bookImageView.snp.trailing).offset(20)
+            make.trailing.equalToSuperview()
+        }
+        
+        authorLabel.snp.makeConstraints { make in
+            make.top.equalTo(nameLabel.snp.bottom).offset(4)
+            make.leading.equalTo(nameLabel.snp.leading)
+        }
+        
+        authorIcon.snp.makeConstraints { make in
+            make.top.equalTo(authorLabel.snp.top)
+            make.leading.equalTo(authorLabel.snp.trailing).offset(2)
+            make.trailing.lessThanOrEqualTo(nameLabel.snp.trailing)
+        }
+        
+        statusView.snp.makeConstraints { make in
+            make.top.equalTo(authorLabel.snp.bottom).offset(10)
+            make.leading.equalTo(nameLabel.snp.leading)
+            make.width.greaterThanOrEqualTo(20)
+            make.height.greaterThanOrEqualTo(20)
+        }
+        
+        statusIcon.snp.makeConstraints { make in
+            make.top.equalTo(statusView.snp.top).offset(6)
+            make.leading.equalTo(statusView.snp.leading).offset(6)
+            make.bottom.equalTo(statusView.snp.bottom).inset(6)
+        }
+        
+        statusLabel.snp.makeConstraints { make in
+            make.top.equalTo(statusView.snp.top).offset(6)
+            make.leading.equalTo(statusIcon.snp.trailing).offset(4)
+            make.trailing.equalTo(statusView.snp.trailing).inset(6)
+            make.bottom.equalTo(statusView.snp.bottom).inset(6)
+        }
+        
+        moreButton.snp.makeConstraints { make in
+            make.bottom.equalTo(bookImageView.snp.bottom)
+            make.trailing.equalTo(nameLabel.snp.trailing)
+        }
+        
+        separatorView.snp.makeConstraints { make in
+            make.top.equalTo(bookImageView.snp.bottom).offset(30)
+            make.leading.equalToSuperview()
+            make.trailing.equalToSuperview()
+            make.height.equalTo(1)
+        }
     }
     
     func setUp(book: Book) {

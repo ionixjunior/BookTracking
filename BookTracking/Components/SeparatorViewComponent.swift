@@ -11,7 +11,6 @@ class SeparatorViewComponent: UIView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        translatesAutoresizingMaskIntoConstraints = false
         backgroundColor = .systemGray5
     }
     

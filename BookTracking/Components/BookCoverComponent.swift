@@ -10,7 +10,6 @@ import UIKit
 class BookCoverComponent: UIImageView {
     override init(frame: CGRect) {
         super.init(frame: frame)
-        translatesAutoresizingMaskIntoConstraints = false
         contentMode = .scaleAspectFill
         clipsToBounds = true
         layer.cornerRadius = 8

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class DetailTableViewCellScreen: UIView {
     
@@ -17,7 +18,6 @@ class DetailTableViewCellScreen: UIView {
         layout.sectionInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
         
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        cv.translatesAutoresizingMaskIntoConstraints = false
         cv.showsHorizontalScrollIndicator = false
         cv.register(DetailTextCollectionViewCell.self, forCellWithReuseIdentifier: DetailTextCollectionViewCell.identifier)
         cv.register(DetailIconCollectionViewCell.self, forCellWithReuseIdentifier: DetailIconCollectionViewCell.identifier)
@@ -39,33 +39,36 @@ class DetailTableViewCellScreen: UIView {
     
     func configScreen(superView: UIView) {
         addViews(superView)
-        configConstraints(superView)
+        configConstraints()
     }
     
     private func addViews(_ superView: UIView) {
-        translatesAutoresizingMaskIntoConstraints = false
         superView.addSubview(self)
         addSubview(collectionView)
         addSubview(separatorView)
     }
     
-    private func configConstraints(_ superView: UIView) {
-        NSLayoutConstraint.activate([
-            topAnchor.constraint(equalTo: superView.topAnchor, constant: 20),
-            bottomAnchor.constraint(equalTo: superView.bottomAnchor, constant: -20),
-            leadingAnchor.constraint(equalTo: superView.leadingAnchor),
-            trailingAnchor.constraint(equalTo: superView.trailingAnchor),
-            
-            collectionView.topAnchor.constraint(equalTo: topAnchor),
-            collectionView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            collectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            collectionView.bottomAnchor.constraint(equalTo: bottomAnchor),
-            
-            separatorView.topAnchor.constraint(equalTo: collectionView.bottomAnchor, constant: 20),
-            separatorView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            separatorView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            separatorView.heightAnchor.constraint(equalToConstant: 1),
-        ])
+    private func configConstraints() {
+        snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(20)
+            make.leading.equalToSuperview()
+            make.trailing.equalToSuperview()
+            make.bottom.equalToSuperview().inset(20)
+        }
+        
+        collectionView.snp.makeConstraints { make in
+            make.top.equalToSuperview()
+            make.leading.equalToSuperview()
+            make.trailing.equalToSuperview()
+            make.bottom.equalToSuperview()
+        }
+        
+        separatorView.snp.makeConstraints { make in
+            make.top.equalTo(collectionView.snp.bottom).offset(20)
+            make.leading.equalToSuperview()
+            make.trailing.equalToSuperview()
+            make.height.equalTo(1)
+        }
     }
     
     func configDelegates(delegate: UICollectionViewDelegate, dataSource: UICollectionViewDataSource) {

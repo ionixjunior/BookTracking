@@ -6,12 +6,12 @@
 //
 
 import UIKit
+import SnapKit
 
 class LibraryViewControllerScreen: UIView {
     
     private lazy var textLabel: UILabel = {
         let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont(name: UILabel.appearance().font.fontName, size: 30)
         label.textColor = .black
         label.text = "Coming soon!"
@@ -34,9 +34,9 @@ class LibraryViewControllerScreen: UIView {
     }
     
     private func configConstraints() {
-        NSLayoutConstraint.activate([
-            textLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
-            textLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
-        ])
+        textLabel.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.centerY.equalToSuperview()
+        }
     }
 }

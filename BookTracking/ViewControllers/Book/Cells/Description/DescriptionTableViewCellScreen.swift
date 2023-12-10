@@ -6,12 +6,12 @@
 //
 
 import UIKit
+import SnapKit
 
 class DescriptionTableViewCellScreen: UIView {
     
     private lazy var descriptionLabel: UILabel = {
         let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Description"
         label.font = UIFont(name: UILabel.appearance().font.fontName, size: 24)
         label.textColor = .black
@@ -20,7 +20,6 @@ class DescriptionTableViewCellScreen: UIView {
     
     private lazy var bookDescriptionLabel: UILabel = {
         let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 14)
         label.textColor = .systemGray2
         label.lineBreakMode = .byTruncatingTail
@@ -33,9 +32,8 @@ class DescriptionTableViewCellScreen: UIView {
     }()
     
     func configScreen(superView: UIView) {
-        translatesAutoresizingMaskIntoConstraints = false
         addViews(superView)
-        configConstraints(superView)
+        configConstraints()
     }
     
     private func addViews(_ superView: UIView) {
@@ -45,26 +43,32 @@ class DescriptionTableViewCellScreen: UIView {
         addSubview(separatorView)
     }
     
-    private func configConstraints(_ superView: UIView) {
-        NSLayoutConstraint.activate([
-            topAnchor.constraint(equalTo: superView.topAnchor, constant: 20),
-            bottomAnchor.constraint(equalTo: superView.bottomAnchor, constant: -20),
-            leadingAnchor.constraint(equalTo: superView.leadingAnchor, constant: 20),
-            trailingAnchor.constraint(equalTo: superView.trailingAnchor, constant: -20),
-            
-            descriptionLabel.topAnchor.constraint(equalTo: topAnchor),
-            descriptionLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
-            descriptionLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
-            
-            bookDescriptionLabel.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 20),
-            bookDescriptionLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
-            bookDescriptionLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
-            
-            separatorView.topAnchor.constraint(equalTo: bookDescriptionLabel.bottomAnchor, constant: 30),
-            separatorView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            separatorView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            separatorView.heightAnchor.constraint(equalToConstant: 1),
-        ])
+    private func configConstraints() {
+        snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(20)
+            make.leading.equalToSuperview().offset(20)
+            make.trailing.equalToSuperview().inset(20)
+            make.bottom.equalToSuperview().inset(20)
+        }
+        
+        descriptionLabel.snp.makeConstraints { make in
+            make.top.equalToSuperview()
+            make.leading.equalToSuperview()
+            make.trailing.equalToSuperview()
+        }
+        
+        bookDescriptionLabel.snp.makeConstraints { make in
+            make.top.equalTo(descriptionLabel.snp.bottom).offset(20)
+            make.leading.equalToSuperview()
+            make.trailing.equalToSuperview()
+        }
+        
+        separatorView.snp.makeConstraints { make in
+            make.top.equalTo(bookDescriptionLabel.snp.bottom).offset(30)
+            make.leading.equalToSuperview()
+            make.trailing.equalToSuperview()
+            make.height.equalTo(1)
+        }
     }
 
     func setUp(book: Book) {
