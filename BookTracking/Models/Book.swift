@@ -16,4 +16,5 @@ struct Book {
     var status: BookStatus
     var description: String
     var details: [BookDetail]
+    var highlights: [BookHighlight]
 }
