@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		7A33C1252B25F2C800A52028 /* BookHighlight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A33C1242B25F2C800A52028 /* BookHighlight.swift */; };
+		7A33C1282B25F6FC00A52028 /* HighlightTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A33C1272B25F6FC00A52028 /* HighlightTableViewCell.swift */; };
+		7A33C12A2B25F71300A52028 /* HighlightTableViewCellScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A33C1292B25F71300A52028 /* HighlightTableViewCellScreen.swift */; };
 		7A46AB032B1C0DB7007F7339 /* BookHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A46AB022B1C0DB7007F7339 /* BookHeaderView.swift */; };
 		7A46AB062B1C206C007F7339 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A46AB052B1C206C007F7339 /* TabBarViewController.swift */; };
 		7A5798372B252BE1006BC62E /* DetailTextCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5798362B252BE1006BC62E /* DetailTextCollectionViewCell.swift */; };
@@ -54,6 +56,8 @@
 /* Begin PBXFileReference section */
 		2BEBBBF810333C8ADAFA9B4D /* Pods-BookTracking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookTracking.debug.xcconfig"; path = "Target Support Files/Pods-BookTracking/Pods-BookTracking.debug.xcconfig"; sourceTree = "<group>"; };
 		7A33C1242B25F2C800A52028 /* BookHighlight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookHighlight.swift; sourceTree = "<group>"; };
+		7A33C1272B25F6FC00A52028 /* HighlightTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightTableViewCell.swift; sourceTree = "<group>"; };
+		7A33C1292B25F71300A52028 /* HighlightTableViewCellScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightTableViewCellScreen.swift; sourceTree = "<group>"; };
 		7A46AB022B1C0DB7007F7339 /* BookHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookHeaderView.swift; sourceTree = "<group>"; };
 		7A46AB052B1C206C007F7339 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		7A5798362B252BE1006BC62E /* DetailTextCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTextCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -112,6 +116,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7A33C1262B25F69500A52028 /* Highlight */ = {
+			isa = PBXGroup;
+			children = (
+				7A33C1272B25F6FC00A52028 /* HighlightTableViewCell.swift */,
+				7A33C1292B25F71300A52028 /* HighlightTableViewCellScreen.swift */,
+			);
+			path = Highlight;
+			sourceTree = "<group>";
+		};
 		7A46AB002B1BFEBD007F7339 /* BookCollectionViewCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -235,6 +248,7 @@
 		7A6B5FEB2B216A7900AAD21D /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				7A33C1262B25F69500A52028 /* Highlight */,
 				7AA794EF2B24F0F40091A9C8 /* Detail */,
 				7AA794E82B24B8620091A9C8 /* Description */,
 				7AA794E72B24B8380091A9C8 /* Header */,
@@ -471,6 +485,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A64E8F62B1BC4D900EE1E05 /* ReadingViewControllerScreen.swift in Sources */,
+				7A33C12A2B25F71300A52028 /* HighlightTableViewCellScreen.swift in Sources */,
 				7AFC6E7F2B21526A00121C4B /* ReadingViewModel.swift in Sources */,
 				7A5798372B252BE1006BC62E /* DetailTextCollectionViewCell.swift in Sources */,
 				7AA7E7CB2B1CBEA70058EC32 /* LibraryViewControllerScreen.swift in Sources */,
@@ -504,6 +519,7 @@
 				7A64E8FF2B1BD2BF00EE1E05 /* BookSectionTableViewCell.swift in Sources */,
 				7A64E9052B1BF56800EE1E05 /* BookCollectionViewCellScreen.swift in Sources */,
 				7A5798402B2539DF006BC62E /* DetailIconCollectionViewCellScreen.swift in Sources */,
+				7A33C1282B25F6FC00A52028 /* HighlightTableViewCell.swift in Sources */,
 				7A57983B2B25340C006BC62E /* DetailViewModel.swift in Sources */,
 				7A64E8FB2B1BCCC600EE1E05 /* BookSection.swift in Sources */,
 				7A64E9012B1BDFDD00EE1E05 /* BookSectionTableViewCellScreen.swift in Sources */,
