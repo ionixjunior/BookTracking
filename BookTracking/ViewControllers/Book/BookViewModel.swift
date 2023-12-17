@@ -27,43 +27,45 @@ class BookViewModel {
     }
     
     func numberOfRowsIn(section: Int) -> Int {
-        if section == Sections.header.rawValue {
-            return 1
-        }
+        switch Sections(rawValue: section) {
         
-        if section == Sections.description.rawValue {
+        case .header:
             return 1
-        }
-        
-        if section == Sections.detail.rawValue {
+            
+        case .description:
             return 1
-        }
-        
-        if section == Sections.highlight.rawValue {
+            
+        case .detail:
+            return 1
+            
+        case .highlight:
             return book.highlights.count
+            
+        default:
+            return 0
+            
         }
-        
-        return 0
     }
     
     func getHeightBy(section: Int) -> CGFloat {
-        if section == Sections.header.rawValue {
+        switch Sections(rawValue: section) {
+        
+        case .header:
             return 211
-        }
-        
-        if section == Sections.description.rawValue {
+            
+        case .description:
             return 148
-        }
-        
-        if section == Sections.detail.rawValue {
+            
+        case .detail:
             return 128
-        }
-        
-        if section == Sections.highlight.rawValue {
+            
+        case .highlight:
             return UITableView.automaticDimension
+            
+        default:
+            return 0
+            
         }
-        
-        return 0
     }
     
     func getHighlightBy(indexPath: IndexPath) -> BookHighlight {

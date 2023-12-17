@@ -71,30 +71,31 @@ extension BookViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let viewModel = viewModel else { return UITableViewCell() }
         
-        if indexPath.section == Sections.header.rawValue {
+        switch Sections(rawValue: indexPath.section) {
+            
+        case .header:
             let cell = tableView.dequeueReusableCell(withIdentifier: HeaderTableViewCell.identifier, for: indexPath) as? HeaderTableViewCell
             cell?.setUp(book: viewModel.book)
             return cell ?? UITableViewCell()
-        }
-        
-        if indexPath.section == Sections.description.rawValue {
+            
+        case .description:
             let cell = tableView.dequeueReusableCell(withIdentifier: DescriptionTableViewCell.identifier, for: indexPath) as? DescriptionTableViewCell
             cell?.setUp(book: viewModel.book)
             return cell ?? UITableViewCell()
-        }
-        
-        if indexPath.section == Sections.detail.rawValue {
+            
+        case .detail:
             let cell = tableView.dequeueReusableCell(withIdentifier: DetailTableViewCell.identifier, for: indexPath) as? DetailTableViewCell
             cell?.setUp(details: viewModel.book.details)
             return cell ?? UITableViewCell()
-        }
-        
-        if indexPath.section == Sections.highlight.rawValue {
+            
+        case .highlight:
             let cell = tableView.dequeueReusableCell(withIdentifier: HighlightTableViewCell.identifier, for: indexPath) as? HighlightTableViewCell
             cell?.setUp(highlight: viewModel.getHighlightBy(indexPath: indexPath))
             return cell ?? UITableViewCell()
+            
+        default:
+            return UITableViewCell()
+            
         }
-        
-        return UITableViewCell()
     }
 }
